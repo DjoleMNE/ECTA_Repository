@@ -29,7 +29,20 @@ function parentIds = my_selection(fitness, p)
 
 %------------- BEGIN CODE --------------
 
-%% This is 'random' selection of parent pairs, can you do better?
-parentIds = randi(p.popSize, [p.popSize 2]);
+parentIds = NaN([p.popSize 2]);
 
+%Get random indeces of individuals...matrix 2x200
+%range, [size of matrix]
+tGroups = randi(p.popSize, [p.sp p.popSize*2]); % Make tournament groups
+
+%choose max over columns -> for each column chose max row 
+[~,iWinner] = max(fitness(tGroups));            % Get 200 Winners
+
+%Fill out patentIds matrix...syntax for matrix(i):
+%goes over whole first row,
+%than over  whole second row, and so on, until the end.
+%Fill 2x100 matrix - > 100 pairs of parents ready for crossover
+for i=1:length(tGroups)
+    parentIds(i) = tGroups(iWinner(i),i);
+end 
 %------------- END OF CODE --------------

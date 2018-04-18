@@ -17,12 +17,14 @@ title('Performance on Hamlet Task')
 clear; p = monkeyGa('hamletQuote');
 parfor iExp = 1:20
    output = adamGa('hamletQuote',p);
+   gene2text(output.best(:,end)')
    fitness(iExp,:) = output.fitMax;
 end
 standardResult = fitness;
 
 parfor iExp = 1:20
    output = monkeyGa('hamletQuote',p);
+   gene2text(output.best(:,end)')
    fitness(iExp,:) = output.fitMax;
 end
 myResult = fitness;

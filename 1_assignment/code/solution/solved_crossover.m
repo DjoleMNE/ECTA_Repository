@@ -29,7 +29,7 @@ function children  = crossover(pop, parentIds, p)
 %------------- BEGIN CODE --------------
 
 %% No crossover happening, can you do better?
-children = pop( parentIds(:,1) ,:);
+children = pop( parentIds(:,1) ,:); %Choose all first parents as children
 
 %% ONE POINT CROSSOVER SOLUTION
 doXover = (rand(1,p.popSize) < p.crossProb);            % Crossover or not?

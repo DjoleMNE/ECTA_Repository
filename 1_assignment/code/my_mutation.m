@@ -1,4 +1,4 @@
-function children  = my_mutation(children, p)
+function children  = my_mutation(input_children, p)
 %Mutation - Make random changes in the child population
 % - Point mutation:
 %   1) Determine which genes will be mutated -- all have an equal chance
@@ -22,8 +22,12 @@ function children  = my_mutation(children, p)
 % Feb 2018; Last revision: 20-Feb-2018
 
 %------------- BEGIN CODE --------------
+children = input_children;
+rng;
 
-%% No mutation happening, can you do better?
-children = children; 
+%Choose randomly which genes need to be mutated
+doMut = (randn(p.popSize,p.nGenes) < p.mutProb);     % Mutate genes or not?
 
+%Generate new random values for genes that are chosen for mutation
+children(doMut) = randi([0 27], [1 sum(doMut(:))]); % Change to random values
 %------------- END OF CODE --------------

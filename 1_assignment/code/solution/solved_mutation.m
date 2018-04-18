@@ -4,7 +4,7 @@ function children  = mutation(children, p)
 %   1) Determine which genes will be mutated -- all have an equal chance
 %   2) Change every gene chosen for mutation to another random value
 %
-% Syntax:  children  = mutation(children, p);
+% Syntax:  children = mutation(children, p);
 %
 % Inputs:
 %    children   - [M X N] - Population of M individuals

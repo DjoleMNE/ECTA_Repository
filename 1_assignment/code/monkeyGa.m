@@ -54,8 +54,8 @@ if nargin<2     % > When called with only the task name, this function
                                  %nGenes for Quote is 18, and for Soliloquy
                                  %is 1446.
                                  
-    p.maxGen    = 200;           %Max num of Generations
-    p.popSize   = 100;           %Number of individuals -> population size
+    p.maxGen    = 4000;           %Max num of Generations
+    p.popSize   = 1000;           %Number of individuals -> population size
     p.sp        = 2;             %NumParents for child->selection pressure?
     p.crossProb = 0.8;
     p.mutProb   = 1/p.nGenes;
@@ -105,6 +105,8 @@ for iGen = 1:p.maxGen
     
     % Create new population -- Combine new children and elite(s)
     newPop    = [pop(eliteIds,:); children];
+    
+    %Remove residual individuals
     pop       = newPop(1:p.popSize,:);  % Keep population size constant
     
     % Evaluate new population
