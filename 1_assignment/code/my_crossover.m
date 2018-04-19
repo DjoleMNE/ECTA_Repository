@@ -1,4 +1,4 @@
-function children  = my_crossover(pop, parentIds, p)
+function children = my_crossover(pop, parentIds, p)
 %Crossover - Creates child solutions by combining genes of parents
 % - Single Point Crossover:
 %   1) For each set of parents:
@@ -27,22 +27,21 @@ function children  = my_crossover(pop, parentIds, p)
 % Feb 2018; Last revision: 20-Feb-2018
 
 %------------- BEGIN CODE --------------
-
-children = pop( parentIds(:,1) ,:);
-
-% rand(range, size of vector/matrix)
-doXover = (rand(1,p.popSize) < p.crossProb);            % Crossover or not?
-
-% randi([range], size of vector/matrix)
-%pose of gene can be from 1 to 17
-crossPt = randi([1 p.nGenes-1],1,p.popSize) .* doXover; % Get Crossover Pts
-
-for iChild = 1:p.popSize
-   partA = 1:crossPt(iChild);
-   partB = 1+crossPt(iChild) : size(pop,2); %size(pop,2) = 18
-   
-   %concatenate partA indices/genes of individual with partB indices/genes...both from pop
-   children(iChild,:) = ...
-       [pop(parentIds(iChild,1), partA), pop(parentIds(iChild,2), partB)];
+%Initialize children matrix by assigning only first individual of all pairs
+children = pop(parentIds(:,1) ,:);
+for child=1:p.popSize
+    %Should crossover be perform or  not
+    % rand(size of vector/matrix)
+    crossover_decision = rand(1) < p.crossProb;
+    
+    if crossover_decision
+       %position of a gene can be from 1 to 17
+       % randi([range], size of vector/matrix)
+       cross_point = randi(p.nGenes-1);
+       first_part = pop(parentIds(child,2),1:cross_point);
+       second_part = pop(parentIds(child,1),(cross_point+1):p.nGenes);
+       %concatenate partA indices/genes with partB indices/genes from pop
+       children(child,:) = [first_part second_part];
+    end
 end
 %------------- END OF CODE -------------
