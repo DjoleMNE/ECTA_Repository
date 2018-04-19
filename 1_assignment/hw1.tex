@@ -154,33 +154,50 @@ As this is a stochastic algorithm to get a fair comparison we should run the alg
 With this data saved you can compare the two algorithms and compute the significance of the comparison. I have given you a few helper functions:
 
 	\lstinputlisting[firstline=45, lastline=64]{code/monkeyExperiment.m}
-
+	\newpage
+\subsection*{Standard algorithm vs our implementation}
 	\begin{figure}[h!]
 	\begin{center}
-	\includegraphics[width=0.75\textwidth]{img/1_vsStandard.png}
-	\caption{\color{red}FILL IN YOUR OWN PLOT HERE}
+	\includegraphics[width=1.17\textwidth]{img/1_vsStandard.png}
+	\caption{\color{red} Median performance of Adam's algorithm (purple) compared with median performance of our (green) algorithm.}
 	\end{center}
 	\end{figure}
 	
 	This plot shows the median performance at each generation (dashed lines) of each algorithm along with their upper and lower quartiles. Indicated at the top is the probability that the two algorithms are the same. Unsurprisingly, both runs of the same algorithm are statistically the same. Replace this plot with one of your own creation, comparing my code with your own implementation, to ensure that your code is working.
 \newpage
+\subsection*{Comparison of our implementation with various components removed}
 	Perform the following comparisons of your algorithm with various components removed and replace the plots with your own, this can be done by replacing the functions in the code and saving the result (e.g. replacing the \mcode{my_crossover} function with the \mcode{no_crossover} function: (1) Your full implementation vs. No crossover, (2) Your full implementation vs. No mutation, (3) No crossover vs. No crossover AND no elitism, and (4) No mutation  vs. No mutation AND no elitism.
-
+	\newpage
+		\subsubsection*{GA performance when operators are removed:}
+		\hspace{-5mm}
 		\begin{figure}[h!]
-		\includegraphics[width=0.5\textwidth]{img/2_vsNoCross.png}
-		\includegraphics[width=0.5\textwidth]{img/3_vsNoMut.png}
-		\includegraphics[width=0.5\textwidth]{img/4_vsNoCrossNoElite.png}
-		\includegraphics[width=0.5\textwidth]{img/5_vsNoMutNoElite.png}
+
+		\includegraphics[width=0.8\textwidth]{img/2_vsNoCross.png}
 		\caption
 		{
-		\textbf{GA performance when operators are removed}\newline
-		\textit{Top Left:} No Crossover,
-		\textit{Top Right:} No Mutation, 
-		\textit{Bottom Left:} No Crossover vs. No Crossover and No Elitism, 
-		\textit{Bottom Right:} No Mutation and No Elitism
-		\color{red}FILL IN YOUR OWN PLOTS HERE
-		}
+			\textbf{No Crossover}}
 		\end{figure}
+				\hspace{-5mm}
+		\begin{figure}[h!]
+
+		\includegraphics[width=0.8\textwidth]{img/3_vsNoMut.png}
+			\caption
+			{			\textbf{ No Mutation}}
+			\end{figure}
+					\hspace{-5mm}
+\begin{figure}[h!]
+
+		\includegraphics[width=0.8\textwidth]{img/4_vsNoCrossNoElite.png}
+	\caption
+	{		\textbf{No Crossover vs. No Crossover and No Elitism}}
+\end{figure}
+		\hspace{-5mm}
+\begin{figure}[h!]
+
+		\includegraphics[width=0.8\textwidth]{img/5_vsNoMutNoElite.png}
+	\caption
+	{		\textbf{No mutation vs. No mutation AND no elitism.}}
+\end{figure}
 \newpage
 \subsubsection{Analyzing the Results}
 \begin{enumerate}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6650) (preloaded format=pdflatex 2018.3.29)  19 APR 2018 19:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6650) (preloaded format=pdflatex 2018.3.29)  19 APR 2018 20:37
 entering extended mode
 **./hw1.tex
 (hw1.tex
@@ -354,71 +354,78 @@ LaTeX Font Info:    Font shape `OML/pcr/m/n' in size <8> not available
 ) [6]
 (code/my_crossover.m) (code/my_mutation.m) (code/my_elitism.m) [7]
 (code/adamGa.m) (code/monkeyExperiment.m) [8] (code/monkeyExperiment.m)
-<img/1_vsStandard.png, id=40, 728.7225pt x 435.6275pt>
+[9]
+<img/1_vsStandard.png, id=44, 1445.4pt x 753.5653pt>
 File: img/1_vsStandard.png Graphic file (type png)
 <use img/1_vsStandard.png>
-Package pdftex.def Info: img/1_vsStandard.png  used on input line 160.
-(pdftex.def)             Requested size: 258.75pt x 154.67876pt.
+Package pdftex.def Info: img/1_vsStandard.png  used on input line 161.
+(pdftex.def)             Requested size: 403.64937pt x 210.44492pt.
 
-[9 <./img/1_vsStandard.png (PNG copy)>]
-<img/2_vsNoCross.png, id=45, 728.7225pt x 435.6275pt>
+Overfull \hbox (58.64937pt too wide) in paragraph at lines 161--162
+ [] 
+ []
+
+[10 <./img/1_vsStandard.png (PNG copy)>]
+Overfull \hbox (4.30838pt too wide) in paragraph at lines 168--168
+[]\OT1/cmr/bx/n/12 Comparison of our implementation with various components
+ []
+
+[11]
+<img/2_vsNoCross.png, id=51, 1028.34187pt x 518.6878pt>
 File: img/2_vsNoCross.png Graphic file (type png)
 <use img/2_vsNoCross.png>
-Package pdftex.def Info: img/2_vsNoCross.png  used on input line 170.
-(pdftex.def)             Requested size: 172.5pt x 103.11694pt.
-<img/3_vsNoMut.png, id=46, 728.7225pt x 435.6275pt>
+Package pdftex.def Info: img/2_vsNoCross.png  used on input line 175.
+(pdftex.def)             Requested size: 276.00105pt x 139.20863pt.
+<img/3_vsNoMut.png, id=52, 1028.34187pt x 518.6878pt>
 File: img/3_vsNoMut.png Graphic file (type png)
 <use img/3_vsNoMut.png>
-Package pdftex.def Info: img/3_vsNoMut.png  used on input line 171.
-(pdftex.def)             Requested size: 172.5pt x 103.11694pt.
-<img/4_vsNoCrossNoElite.png, id=47, 728.7225pt x 435.6275pt>
+Package pdftex.def Info: img/3_vsNoMut.png  used on input line 183.
+(pdftex.def)             Requested size: 276.00105pt x 139.20863pt.
+<img/4_vsNoCrossNoElite.png, id=53, 1028.34187pt x 518.6878pt>
 File: img/4_vsNoCrossNoElite.png Graphic file (type png)
 <use img/4_vsNoCrossNoElite.png>
-Package pdftex.def Info: img/4_vsNoCrossNoElite.png  used on input line 172.
-(pdftex.def)             Requested size: 172.5pt x 103.11694pt.
-<img/5_vsNoMutNoElite.png, id=48, 728.7225pt x 435.6275pt>
+Package pdftex.def Info: img/4_vsNoCrossNoElite.png  used on input line 190.
+(pdftex.def)             Requested size: 276.00105pt x 139.20863pt.
+<img/5_vsNoMutNoElite.png, id=54, 1028.34187pt x 518.6878pt>
 File: img/5_vsNoMutNoElite.png Graphic file (type png)
 <use img/5_vsNoMutNoElite.png>
-Package pdftex.def Info: img/5_vsNoMutNoElite.png  used on input line 173.
-(pdftex.def)             Requested size: 172.5pt x 103.11694pt.
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 170--182
-[][] []
- []
+Package pdftex.def Info: img/5_vsNoMutNoElite.png  used on input line 197.
+(pdftex.def)             Requested size: 276.00105pt x 139.20863pt.
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 170--182
-[] [] 
- []
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[10 <./img/2_vsNoCross.png (PNG copy)> <./img/3_vsNoMut.png (PNG copy)> <./img/
-4_vsNoCrossNoElite.png (PNG copy)> <./img/5_vsNoMutNoElite.png (PNG copy)>]
-[11] (code/monkeyExperiment.m) [12] (code/monkeyExperiment.m)
-Overfull \hbox (6.9636pt too wide) in paragraph at lines 244--250
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[12 <./img/2_vsNoCross.png (PNG copy)> <./img/3_vsNoMut.png (PNG copy)>]
+[13 <./img/4_vsNoCrossNoElite.png (PNG copy)> <./img/5_vsNoMutNoElite.png (PNG 
+copy)>] (code/monkeyExperiment.m) [14] (code/monkeyExperiment.m)
+Overfull \hbox (6.9636pt too wide) in paragraph at lines 261--267
 []\OT1/cmr/m/n/10 How comparable are these methods? Is random search comparable
  to evolutionary
  []
 
-[13]
-Overfull \hbox (28.25252pt too wide) in paragraph at lines 259--260
+[15]
+Overfull \hbox (28.25252pt too wide) in paragraph at lines 276--277
 \OT1/cmr/m/n/10 1) This inline demo [][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][] uses the []\OT1/cmtt/m/n/10 \mcode{} \OT1/cmr/m/n/10 co
 mmand.[] 
  []
 
 
-Overfull \hbox (4.1379pt too wide) in paragraph at lines 274--275
+Overfull \hbox (4.1379pt too wide) in paragraph at lines 291--292
 \OT1/cmr/m/n/10 Note: Here, the package was loaded with the []\OT1/cmtt/m/n/10 
 framed\OT1/cmr/m/n/10 , []\OT1/cmtt/m/n/10 numbered\OT1/cmr/m/n/10 , []\OT1/cmt
 t/m/n/10 autolinebreaks
  []
 
-[14] (hw1.aux) ) 
+[16] (hw1.aux) ) 
 Here is how much of TeX's memory you used:
- 4629 strings out of 495223
- 66261 string characters out of 3181671
+ 4626 strings out of 495223
+ 66215 string characters out of 3181671
  180896 words of memory out of 3000000
- 7814 multiletter control sequences out of 15000+200000
+ 7811 multiletter control sequences out of 15000+200000
  16075 words of font info for 62 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
  41i,8n,42p,650b,1342s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -442,9 +449,9 @@ mfs/install/fonts/type1/public/amsfonts/cm/cmtt10.pfb></home/djole/.miktex/texm
 fs/install/fonts/type1/public/amsfonts/cm/cmtt12.pfb></home/djole/.miktex/texmf
 s/install/fonts/type1/public/amsfonts/symbols/msam10.pfb></home/djole/.miktex/t
 exmfs/install/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on hw1.pdf (14 pages, 525071 bytes).
+Output written on hw1.pdf (16 pages, 668689 bytes).
 PDF statistics:
- 132 PDF objects out of 1000 (max. 8388607)
+ 138 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
