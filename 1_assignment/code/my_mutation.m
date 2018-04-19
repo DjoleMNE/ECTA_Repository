@@ -22,12 +22,15 @@ function children  = my_mutation(input_children, p)
 % Feb 2018; Last revision: 20-Feb-2018
 
 %------------- BEGIN CODE --------------
-children = input_children;
-rng;
-
-%Choose randomly which genes need to be mutated
-doMut = (randn(p.popSize,p.nGenes) < p.mutProb);     % Mutate genes or not?
-
-%Generate new random values for genes that are chosen for mutation
-children(doMut) = randi([0 27], [1 sum(doMut(:))]); % Change to random values
+%Initialize children matrix and seed of random generator
+children = input_children; rng;
+%Iterate over all childrens and their genes
+for child = 1:p.popSize
+    gene_mutate = rand(1,p.nGenes);
+    for gene = 1:p.nGenes
+        if(gene_mutate(gene) < p.mutProb)
+            children(child,gene) = randi([0 27],1);
+        end
+    end
+end
 %------------- END OF CODE --------------

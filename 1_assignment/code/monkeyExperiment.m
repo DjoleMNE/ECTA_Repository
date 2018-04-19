@@ -22,6 +22,7 @@ parfor iExp = 1:20
 end
 standardResult = fitness;
 
+disp("MY CODE")
 parfor iExp = 1:20
    output = monkeyGa('hamletQuote',p);
    gene2text(output.best(:,end)')
