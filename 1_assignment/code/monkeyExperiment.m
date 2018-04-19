@@ -15,19 +15,14 @@ title('Performance on Hamlet Task')
 % experiment on a different core to speed things up. This is done by simply
 % changing 'for' to 'parfor'. 
 clear; p = monkeyGa('hamletQuote');
-p.mutProb = 0.0;
 parfor iExp = 1:20
-   output = monkeyGa('hamletQuote',p);
-   gene2text(output.best(:,end)')
+   output = adamGa('hamletQuote',p);
    fitness(iExp,:) = output.fitMax;
 end
 standardResult = fitness;
 
-disp("MY CODE")
-p.elitePerc = 0.0;
 parfor iExp = 1:20
    output = monkeyGa('hamletQuote',p);
-   gene2text(output.best(:,end)')
    fitness(iExp,:) = output.fitMax;
 end
 myResult = fitness;
@@ -66,18 +61,18 @@ hS2 = scatter(gens(h),ones(1,sum(h))*19,20,C(7,:),'filled','s');
 [hLine(3), hFill(2)] = percPlot(gens,fit2,C(5,:));
 
 % Label and make pretty
-hLeg = legend([hFill hS1 hS2],'No Mutation', 'No Mutation and No Elitism','p > 0.05', 'p < 0.05','Location','SouthEast');
+hLeg = legend([hFill hS1 hS2],'Baseline', 'No Mutation','p > 0.05', 'p < 0.05','Location','SouthEast');
 axis([0 200 0 19]); grid on; xlabel('Generations'); ylabel('Fitness'); title('Fitness on Hamlet Quote'); set(gca,'Fontsize',24);
 
 %% The whole monologue
 clear; p = monkeyGa('hamletSoliloquy');
-p.maxGen  = 10000;              % Increase the number of generations
+p.maxGen  = 20000;              % Increase the number of generations
 tic;                            % Start the timer
 output = monkeyGa('hamletSoliloquy',p);
 gene2text(output.best(:,end)')  % Show the found text
 percentCorrect = (output.fitMax(end)/1446);
 timeToComplete = toc;           % End the timer
-disp([num2str(100*percentCorrect) '% correct in ' (timeToComplete) ' seconds'])
+disp([num2str(100*percentCorrect) '% correct in ' num2str(timeToComplete) ' seconds'])
 
 %% Timing a single evaluation
 aWholeBunchOfTimes = 100000;
