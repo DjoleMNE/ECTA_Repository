@@ -23,7 +23,9 @@ function eliteIds = my_elitism(fitness, p)
 % Feb 2018; Last revision: 20-Feb-2018
 
 %------------- BEGIN CODE --------------
-nElite = ceil(p.popSize * p.elitePerc);     % How many elites to take
-[~,iSorted]= sort(fitness,'descend');       % Sort population by fitness
-eliteIds = iSorted(1:nElite);               % Take top solutions
+elite_individuals = p.popSize* p.elitePerc;
+
+[sorted_values,sorted_ids]= sort(fitness,'descend');  
+
+eliteIds = sorted_ids(1:ceil(elite_individuals));              
 %------------- END OF CODE --------------
