@@ -1,12 +1,14 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6650) (preloaded format=pdflatex 2018.3.29)  19 APR 2018 21:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.21)  26 APR 2018 16:55
 entering extended mode
-**./hw1.tex
-(hw1.tex
-LaTeX2e <2017-04-15>
-Babel <3.18> and hyphenation patterns for 0 language(s) loaded.
-(/home/djole/.miktex/texmfs/install/tex/latex/base/article.cls
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**hw1.tex
+(./hw1.tex
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(/home/djole/.miktex/texmfs/install/tex/latex/base/size10.clo
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -20,65 +22,73 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-) (mcode.sty
+) (./mcode.sty
 -- Package: `mcode' 2.7 <2015/11/11> --
 Package: mcode 2015/11/11 2.7
  - settings optimized for display (colour formating)
  - literate programming (character replacements) enabled
  - automatic line breaking enabled (careful, buggy!)
  - framed listings
-(/home/djole/.miktex/texmfs/install/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-(/home/djole/.miktex/texmfs/install/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-(/home/djole/.miktex/texmfs/install/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
-Package xcolor Info: Model `RGB' extended on input line 1364.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-(/home/djole/.miktex/texmfs/install/tex/latex/listings/listings.sty
-(/home/djole/.miktex/texmfs/install/tex/latex/graphics/keyval.sty
+\Gread@gobject=\count87
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-\lst@mode=\count87
+\lst@mode=\count88
 \lst@gtempboxa=\box26
 \lst@token=\toks15
-\lst@length=\count88
+\lst@length=\count89
 \lst@currlwidth=\dimen103
-\lst@column=\count89
-\lst@pos=\count90
+\lst@column=\count90
+\lst@pos=\count91
 \lst@lostspace=\dimen104
 \lst@width=\dimen105
-\lst@newlines=\count91
-\lst@lineno=\count92
+\lst@newlines=\count92
+\lst@lineno=\count93
 \lst@maxwidth=\dimen106
 
-(/home/djole/.miktex/texmfs/install/tex/latex/listings/lstmisc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count93
-\lst@skipnumbers=\count94
+\c@lstnumber=\count94
+\lst@skipnumbers=\count95
 \lst@framebox=\box27
 )
-(/home/djole/.miktex/texmfs/install/tex/latex/listings/listings.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
-(/home/djole/.miktex/texmfs/install/tex/latex/base/textcomp.sty
-Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
 (textcomp)               4 = 5 + \texteuro
@@ -92,7 +102,7 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             See the documentation for details.
 Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
 
-(/home/djole/.miktex/texmfs/install/tex/latex/base/ts1enc.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 )
 LaTeX Info: Redefining \oldstylenums on input line 334.
@@ -163,21 +173,21 @@ Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 230.
 
 
-(/home/djole/.miktex/texmfs/install/tex/latex/psnfss/ot1pcr.fd
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ))
-(/home/djole/.miktex/texmfs/install/tex/latex/enumitem/enumitem.sty
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \labelindent=\skip43
 \enit@outerparindent=\dimen107
 \enit@toks=\toks16
 \enit@inbox=\box29
-\enitdp@description=\count95
+\enitdp@description=\count96
 )
-(/home/djole/.miktex/texmfs/install/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(/home/djole/.miktex/texmfs/install/tex/latex/amsfonts/amsfonts.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks17
 \symAMSa=\mathgroup4
@@ -185,41 +195,41 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-\enitdp@todolist=\count96
+\enitdp@todolist=\count97
 
-(/home/djole/.miktex/texmfs/install/tex/latex/psnfss/pifont.sty
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/pifont.sty
 Package: pifont 2005/04/12 PSNFSS-v9.2a Pi font support (SPQR) 
 LaTeX Font Info:    Try loading font information for U+pzd on input line 63.
 
-(/home/djole/.miktex/texmfs/install/tex/latex/psnfss/upzd.fd
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/upzd.fd
 File: upzd.fd 2001/06/04 font definitions for U/pzd.
 )
 LaTeX Font Info:    Try loading font information for U+psy on input line 64.
 
-(/home/djole/.miktex/texmfs/install/tex/latex/psnfss/upsy.fd
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/upsy.fd
 File: upsy.fd 2001/06/04 font definitions for U/psy.
 ))
-(/home/djole/.miktex/texmfs/install/tex/latex/graphics/graphicx.sty
-Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/home/djole/.miktex/texmfs/install/tex/latex/graphics/graphics.sty
-Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
 
-(/home/djole/.miktex/texmfs/install/tex/latex/graphics/trig.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/home/djole/.miktex/texmfs/install/tex/latex/graphics-cfg/graphics.cfg
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: pdftex.def on input line 99.
+Package graphics Info: Driver file: pdftex.def on input line 95.
 )
 \Gin@req@height=\dimen108
 \Gin@req@width=\dimen109
 )
-(/home/djole/.miktex/texmfs/install/tex/latex/url/url.sty
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-) (hw1.aux)
+) (./hw1.aux)
 \openout1 = `hw1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
@@ -237,159 +247,146 @@ LaTeX Font Info:    ... okay on input line 29.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 29.
 
-(/home/djole/.miktex/texmfs/install/tex/latex/base/ts1cmr.fd
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 29.
 
-(/home/djole/.miktex/texmfs/install/tex/context/base/supp-pdf.mkii
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count97
+\scratchcounter=\count98
 \scratchdimen=\dimen110
 \scratchbox=\box30
-\nofMPsegments=\count98
-\nofMParguments=\count99
+\nofMPsegments=\count99
+\nofMParguments=\count100
 \everyMPshowfont=\toks18
-\MPscratchCnt=\count100
+\MPscratchCnt=\count101
 \MPscratchDim=\dimen111
-\MPnumerator=\count101
-\makeMPintoPDFobject=\count102
+\MPnumerator=\count102
+\makeMPintoPDFobject=\count103
 \everyMPtoPDFconversion=\toks19
-) (/home/djole/.miktex/texmfs/install/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
-
-(/home/djole/.miktex/texmfs/install/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-(/home/djole/.miktex/texmfs/install/tex/latex/oberdiek/grfext.sty
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+\c@lstlisting=\count104
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
 
-(/home/djole/.miktex/texmfs/install/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-
-(/home/djole/.miktex/texmfs/install/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-)))
-(/home/djole/.miktex/texmfs/install/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
-
-(/home/djole/.miktex/texmfs/install/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-
-(/home/djole/.miktex/texmfs/install/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-
-(/home/djole/.miktex/texmfs/install/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-(/home/djole/.miktex/texmfs/install/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(/home/djole/.miktex/texmfs/install/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
 Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 456.
-)
-\c@lstlisting=\count103
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 LaTeX Font Info:    Try loading font information for U+msa on input line 31.
 
-(/home/djole/.miktex/texmfs/install/tex/latex/amsfonts/umsa.fd
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 31.
 
-(/home/djole/.miktex/texmfs/install/tex/latex/amsfonts/umsb.fd
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 <img/chimp.jpg, id=1, 495.2904pt x 394.1124pt>
 File: img/chimp.jpg Graphic file (type jpg)
-<use img/chimp.jpg>
-Package pdftex.def Info: img/chimp.jpg  used on input line 36.
+ <use img/chimp.jpg>
+Package pdftex.def Info: img/chimp.jpg used on input line 36.
 (pdftex.def)             Requested size: 251.84853pt x 200.39929pt.
  [1
 
-{/home/djole/.miktex/texmfs/data/pdftex/config/pdftex.map} <./img/chimp.jpg>]
-Overfull \hbox (1.9173pt too wide) in paragraph at lines 51--52
-[]\OT1/cmr/m/n/10 Answer the question, "is evolution just a monkey banging on a
- typewriter?" 
- []
-
-[2]
-Overfull \hbox (2.24947pt too wide) in paragraph at lines 89--90
-[]\OT1/cmr/m/n/10 1 ZIP (code and data) -- a .zip file containing all code use 
-to run experiments
- []
-
-[3] (code/monkeyGa.m) [4] (code/monkeyExperiment.m
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./img/chimp.jpg>] [2] [3]
+(./code/monkeyGa.m) [4] (./code/monkeyExperiment.m
 LaTeX Font Info:    Try loading font information for TS1+pcr on input line 3.
 
-(/home/djole/.miktex/texmfs/install/tex/latex/psnfss/ts1pcr.fd
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 )) [5]
-(code/my_selection.m
+(./code/my_selection.m
 LaTeX Font Info:    Try loading font information for OML+pcr on input line 46.
 
-(/home/djole/.miktex/texmfs/install/tex/latex/psnfss/omlpcr.fd
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlpcr.fd
 File: omlpcr.fd 
 )
 LaTeX Font Info:    Font shape `OML/pcr/m/n' in size <8> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 46.
 ) [6]
-(code/my_crossover.m) (code/my_mutation.m) (code/my_elitism.m) [7]
-(code/adamGa.m) (code/monkeyExperiment.m) [8] (code/monkeyExperiment.m)
-[9]
-<img/1_vsStandard.png, id=44, 1445.4pt x 753.5653pt>
+(./code/my_crossover.m) (./code/my_mutation.m) (./code/my_elitism.m) [7]
+(./code/adamGa.m) (./code/monkeyExperiment.m) [8] (./code/monkeyExperiment.m)
+[9] <img/1_vsStandard.png, id=45, 1445.4pt x 753.5653pt>
 File: img/1_vsStandard.png Graphic file (type png)
+
 <use img/1_vsStandard.png>
-Package pdftex.def Info: img/1_vsStandard.png  used on input line 161.
+Package pdftex.def Info: img/1_vsStandard.png used on input line 161.
 (pdftex.def)             Requested size: 403.64937pt x 210.44492pt.
 
 Overfull \hbox (58.64937pt too wide) in paragraph at lines 161--162
  [] 
  []
 
-[10 <./img/1_vsStandard.png (PNG copy)>]
-Overfull \hbox (4.30838pt too wide) in paragraph at lines 168--168
-[]\OT1/cmr/bx/n/12 Comparison of our implementation with various components
- []
-
-[11]
-<img/2_vsNoCross.png, id=51, 1028.34187pt x 518.6878pt>
+[10 <./img/1_vsStandard.png (PNG copy)>] [11]
+<img/2_vsNoCross.png, id=52, 1028.34187pt x 518.6878pt>
 File: img/2_vsNoCross.png Graphic file (type png)
+
 <use img/2_vsNoCross.png>
-Package pdftex.def Info: img/2_vsNoCross.png  used on input line 175.
+Package pdftex.def Info: img/2_vsNoCross.png used on input line 175.
 (pdftex.def)             Requested size: 276.00105pt x 139.20863pt.
-<img/3_vsNoMut.png, id=52, 1028.34187pt x 518.6878pt>
+
+<img/3_vsNoMut.png, id=53, 1028.34187pt x 518.6878pt>
 File: img/3_vsNoMut.png Graphic file (type png)
-<use img/3_vsNoMut.png>
-Package pdftex.def Info: img/3_vsNoMut.png  used on input line 183.
+ <use img/3_vsNoMut.png>
+Package pdftex.def Info: img/3_vsNoMut.png used on input line 183.
 (pdftex.def)             Requested size: 276.00105pt x 139.20863pt.
-<img/4_vsNoCrossNoElite.png, id=53, 1028.34187pt x 518.6878pt>
+
+<img/4_vsNoCrossNoElite.png, id=54, 1028.34187pt x 518.6878pt>
 File: img/4_vsNoCrossNoElite.png Graphic file (type png)
+
 <use img/4_vsNoCrossNoElite.png>
-Package pdftex.def Info: img/4_vsNoCrossNoElite.png  used on input line 190.
+Package pdftex.def Info: img/4_vsNoCrossNoElite.png used on input line 190.
 (pdftex.def)             Requested size: 276.00105pt x 139.20863pt.
-<img/5_vsNoMutNoElite.png, id=54, 1028.34187pt x 518.6878pt>
+
+<img/5_vsNoMutNoElite.png, id=55, 1028.34187pt x 518.6878pt>
 File: img/5_vsNoMutNoElite.png Graphic file (type png)
+
 <use img/5_vsNoMutNoElite.png>
-Package pdftex.def Info: img/5_vsNoMutNoElite.png  used on input line 197.
+Package pdftex.def Info: img/5_vsNoMutNoElite.png used on input line 197.
 (pdftex.def)             Requested size: 276.00105pt x 139.20863pt.
 
 
@@ -400,58 +397,85 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [12 <./img/2_vsNoCross.png (PNG copy)> <./img/3_vsNoMut.png (PNG copy)>]
 [13 <./img/4_vsNoCrossNoElite.png (PNG copy)> <./img/5_vsNoMutNoElite.png (PNG 
-copy)>] (code/monkeyExperiment.m) [14] (code/monkeyExperiment.m)
-Overfull \hbox (6.9636pt too wide) in paragraph at lines 261--267
-[]\OT1/cmr/m/n/10 How comparable are these methods? Is random search comparable
- to evolutionary
- []
-
-[15]
-Overfull \hbox (28.25252pt too wide) in paragraph at lines 272--273
-\OT1/cmr/m/n/10 1) This inline demo [][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][] uses the []\OT1/cmtt/m/n/10 \mcode{} \OT1/cmr/m/n/10 co
-mmand.[] 
+copy)>]
+Overfull \hbox (38.17773pt too wide) in paragraph at lines 221--221
+[]\OT1/cmr/m/it/10 https://www.researchgate.net/post/Is[]crossover[]a[]pillar[]
+of[]genetic[]algorithms 
  []
 
 
-Overfull \hbox (4.1379pt too wide) in paragraph at lines 287--288
-\OT1/cmr/m/n/10 Note: Here, the package was loaded with the []\OT1/cmtt/m/n/10 
-framed\OT1/cmr/m/n/10 , []\OT1/cmtt/m/n/10 numbered\OT1/cmr/m/n/10 , []\OT1/cmt
-t/m/n/10 autolinebreaks
+Overfull \hbox (191.4517pt too wide) in paragraph at lines 221--221
+[]\OT1/cmr/m/it/10 https://www.researchgate.net/post/What[]is[]the[]role[]of[]m
+utation[]and[]crossover[]probability[]in[]Genetic[]algorithms 
  []
 
-[16] (hw1.aux) ) 
+
+Overfull \hbox (38.17773pt too wide) in paragraph at lines 238--238
+[]\OT1/cmr/m/it/10 https://www.researchgate.net/post/Is[]crossover[]a[]pillar[]
+of[]genetic[]algorithms 
+ []
+
+
+Overfull \hbox (191.4517pt too wide) in paragraph at lines 238--238
+[]\OT1/cmr/m/it/10 https://www.researchgate.net/post/What[]is[]the[]role[]of[]m
+utation[]and[]crossover[]probability[]in[]Genetic[]algorithms 
+ []
+
+
+Overfull \hbox (0.2314pt too wide) in paragraph at lines 238--238
+[]\OT1/cmr/m/it/10 https://stackoverflow.com/questions/17882992/genetic-algorit
+hm-is-
+ []
+
+[14]
+Overfull \hbox (0.2314pt too wide) in paragraph at lines 253--253
+[]\OT1/cmr/m/it/10 https://stackoverflow.com/questions/17882992/genetic-algorit
+hm-is-
+ []
+
+[15] (./code/monkeyExperiment.m) [16] (./code/monkeyExperiment.m) [17]
+Overfull \hbox (4.1379pt too wide) in paragraph at lines 317--318
+\OT1/cmr/m/n/10 Note: Here, the pack-age was loaded with the []\OT1/cmtt/m/n/10
+ framed\OT1/cmr/m/n/10 , []\OT1/cmtt/m/n/10 numbered\OT1/cmr/m/n/10 , []\OT1/cm
+tt/m/n/10 autolinebreaks
+ []
+
+[18] (./hw1.aux) ) 
 Here is how much of TeX's memory you used:
- 4628 strings out of 495223
- 66267 string characters out of 3181671
- 180896 words of memory out of 3000000
- 7813 multiletter control sequences out of 15000+200000
- 16075 words of font info for 62 fonts, out of 3000000 for 9000
- 0 hyphenation exceptions out of 8191
- 41i,8n,42p,650b,1342s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/home/djole/.miktex/texmfs/install/fonts/enc/dvips/base/8r.enc
-} </home/djole/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.
-pk></home/djole/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx10.pf
-b></home/djole/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></home/djole/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
-></home/djole/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
-/home/djole/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></h
-ome/djole/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></hom
-e/djole/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17.pfb></home/
-djole/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr5.pfb></home/djo
-le/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/djole/
-.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb></home/djole/.mi
-ktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/djole/.mikte
-x/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy5.pfb></home/djole/.miktex/
-texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb></home/djole/.miktex/te
-xmfs/install/fonts/type1/public/amsfonts/cm/cmti10.pfb></home/djole/.miktex/tex
-mfs/install/fonts/type1/public/amsfonts/cm/cmtt10.pfb></home/djole/.miktex/texm
-fs/install/fonts/type1/public/amsfonts/cm/cmtt12.pfb></home/djole/.miktex/texmf
-s/install/fonts/type1/public/amsfonts/symbols/msam10.pfb></home/djole/.miktex/t
-exmfs/install/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on hw1.pdf (16 pages, 671127 bytes).
+ 4679 strings out of 493029
+ 65789 string characters out of 6136234
+ 191241 words of memory out of 5000000
+ 8093 multiletter control sequences out of 15000+600000
+ 16811 words of font info for 64 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 37i,8n,42p,647b,1342s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{
+/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/
+msam10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/sha
+re/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on hw1.pdf (18 pages, 691153 bytes).
 PDF statistics:
- 138 PDF objects out of 1000 (max. 8388607)
+ 163 PDF objects out of 1000 (max. 8388607)
+ 112 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
