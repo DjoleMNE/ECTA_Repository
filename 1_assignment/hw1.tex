@@ -23,7 +23,7 @@
 \setlength{\parskip}{18pt}
 \title{ECTA Homework 1\\Genetic Algorithms\\and\\Infinite Monkeys}
 \author{\color{red} Djordje Vukcevic, \texttt{djordje.vukcevic@smail.inf.h-brs.de}\\
-\color{red}	Supriya Vadiraj, supriya.vadiraj@smail.inf.h-brs.de}
+\color{red}	Supriya to be added...}
 % //////////////////////////////////////////////////
 
 \begin{document}
@@ -205,53 +205,26 @@ With this data saved you can compare the two algorithms and compute the signific
 %-------------------------%
 % ANSWER: 
 \textit{
- \color{blue}\begin{itemize}
- \item Crossover and Mutation perform two important roles in genetic algorithm.
- \item Crossover is a convergence operation which is intended to pull the population towards a local minimum/maximum.
- \item Mutation is a divergence operation. It is intended to occasionally break one or more members of a population out of a local minimum/maximum space and potentially discover a better minimum/maximum space.
- \item  As described in our result in the comparison graph, the aim is to bring the population to convergence.
- \item As shown in the graphs in our implementation , by performing only crossover, the fitness takes longer generations/time to reach the solution.
- \item By performing without mutation, it shows that the fitness reaches a particular level and gets stagnant/constant.
-\end{itemize} 
-\textbf{References}
-\begin{itemize}
-	\item https://www.researchgate.net/post/Is\_crossover\_a\_pillar\_of\_genetic\_algorithms
-	\item https://www.researchgate.net/post/What\_is\_the\_role\_of\_mutation\_and\_crossover\_probability\_in\_Genetic\_algorithms
-\end{itemize}
-  }
+ \color{red}WRITE SOMETHING HERE
+ }
 %-------------------------%
 
 	\item \textbf{When only crossover is used the problem is not typically solved. Why? Could you devise an experiment that would support your explanation? One in which crossover could the solve the problem every time?}\\
 %-------------------------%
 % ANSWER:
 \textit{
-\color{blue}\begin{itemize}
-	\item A Genetic Algorithm is supposed to have the possibility to explore the problem space. Mutation is a small step in exploring, whereas Crossover is potentially a larger step if crossover happens between individuals that are far apart. However, the larger the step is, the higher probability of producing a failure. When there is only crossover performed ,the algorithm selects genes from the individuals in the initial population and recombines them. The algorithm cannot create any new genes because there is no mutation.
-	\item Crossover is a convergence operation which is intended to pull the population towards a local minimum/maximum.
-\end{itemize}
-\textbf{References}
-\begin{itemize}
-	\item https://www.researchgate.net/post/Is\_crossover\_a\_pillar\_of\_genetic\_algorithms
-	\item https://www.researchgate.net/post/What\_is\_the\_role\_of\_mutation\_and\_crossover\_probability\_in\_Genetic\_algorithms
-	\item https://stackoverflow.com/questions/17882992/genetic-algorithm-is-elitism-necessary-if-crossover-is-low
-\end{itemize}
-}
+\color{red}WRITE SOMETHING HERE
+ }
 %-------------------------%
 	
 	\item \textbf{Describe the benefits of elitism in the crossover and mutation only cases.}\\
 %-------------------------%
 % ANSWER:
 \textit{
-\color{blue}\begin{itemize}
-	\item Even with a high crossover rate, and a selection process which selects higher chromosome to crossover there is always a chance (no matter how small) that you will lose the best chromosome from one generation to the next. Elitism means that once a good result is found, it will always remain in the population until a better result is found.
-\item No matter how small the chance of losing your best result, it is always a good idea to employ a safe guard to ensure that it won't ever happen.
-\end{itemize}
-\textbf{References}
-\begin{itemize}
-	\item https://stackoverflow.com/questions/17882992/genetic-algorithm-is-elitism-necessary-if-crossover-is-low
-\end{itemize}
+\color{red}WRITE SOMETHING HERE
 }
 %-------------------------%	
+
 \end{enumerate}
 
 \newpage
@@ -280,18 +253,15 @@ How long would it take to find the same solution by a monkey on a type writer, i
 %-------------------------%
 % ANSWER:
 \textit{
-\color{blue}Possible Number of states is $28^{1446}$ and time taken to compute one evaluation is 2.0268e-06 seconds. Hence, it will take $28^{1446} * 2.0268e-06$ to reach the worst case.
+\color{red}WRITE SOMETHING HERE
 }
 %-------------------------%
 
-\vspace{1mm}
+\vspace{3cm}
 How comparable are these methods? Is random search comparable to evolutionary search?\\
 %-------------------------%
 \textit{
-\color{blue}\begin{itemize}
-	\item Genetic Algorithms use randomness to create initial solutions, new individuals (via mutation and crossover operators) and even select individuals. However,  selection tends to favor the most fittest individuals. Also, genetic operators are not purely random but use randomness to (often slightly) change individuals.
-	\item Whereas random search methods take much longer time to reach the solution.
-\end{itemize}
+\color{red}WRITE SOMETHING HERE
 }
 %-------------------------%	
 
