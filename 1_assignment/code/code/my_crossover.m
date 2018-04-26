@@ -39,7 +39,7 @@ for child=1:p.popSize
        % randi([range], size of vector/matrix)
        cross_point = randi(p.nGenes-1);
        first_part = pop(parentIds(child,2),1:cross_point);
-       second_part = pop(parentIds(child,1),(cross_point+1):p.nGenes);
+       second_part = pop(parentIds(child,1),(cross_point+1):end);
        %concatenate partA indices/genes with partB indices/genes from pop
        children(child,:) = [first_part second_part];
     end
