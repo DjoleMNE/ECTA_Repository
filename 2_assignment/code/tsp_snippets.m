@@ -79,7 +79,3 @@ subplot(2,2,2);
 subplot(2,2,[3 4])
     plotTsp(child, coords);
     title('Child')
-
-
-
-
