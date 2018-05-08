@@ -81,7 +81,8 @@ for iGen = 1:p.maxGen
     % - Initialize a population of random individuals and evaluate them.
     if iGen == 1
         pop         = randi([0 27], [p.popSize, p.nGenes]); % (range, matrix dimensions)
-        fitness     = feval(p.task, pop);        
+        fitness     = feval(p.task, pop);
+        fitness_normalized = fitness/sum(fitness);
     end
 
     % Data Gathering
@@ -92,7 +93,7 @@ for iGen = 1:p.maxGen
     %% Evolutionary Operators
     
     % Selection -- Returns [MX2] indices of parents
-    parentIds = my_selection(fitness, p); % Returns indices of parents
+    parentIds = my_selection(fitness_normalized, p); % Returns indices of parents
     
     % Crossover -- Returns children of selected parents
     children  = my_crossover(pop, parentIds, p);
@@ -101,7 +102,7 @@ for iGen = 1:p.maxGen
     children  = my_mutation(children, p);
     
     % Elitism   -- Select best individual(s) to continue unchanged
-    eliteIds  = my_elitism(fitness, p);
+    eliteIds  = my_elitism(fitness_normalized, p);
     
     % Create new population -- Combine new children and elite(s)
     newPop    = [pop(eliteIds,:); children];
@@ -111,6 +112,8 @@ for iGen = 1:p.maxGen
     
     % Evaluate new population
     fitness   = feval(p.task, pop);
+    fitness_normalized = fitness/sum(fitness);
+
     
     %% Plot Population Progress
     % Comment this out or create a variable to toggle its execution when
