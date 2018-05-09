@@ -1,6 +1,6 @@
 %% Run the algorithm once
 clear;
-output = knapsack(); % Run with hyperparameters
+output = tsp(); % Run with hyperparameters
 
 % View Result
 plot([output.fitMax; output.fitMed]','LineWidth',3);

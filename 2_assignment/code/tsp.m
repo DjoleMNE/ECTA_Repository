@@ -1,6 +1,6 @@
-function output = knapsack()
+function output = tsp()
 %% randomly init population
-items = readtable('items.csv');
+items = readtable('cities.csv');
 
 value = items.value;
 weight = items.weight;
