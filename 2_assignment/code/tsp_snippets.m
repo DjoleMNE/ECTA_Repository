@@ -2,7 +2,7 @@
 clear
 cityData = importdata('cities.csv');
 nCities = 10;
-coords = cityData.data([1:nCities], [3 2])'; % <- switch to plot with north up after imagesc
+coords = cityData.data(1:nCities, [3 2])'; % <- switch to plot with north up after imagesc
 plot(coords(1,:), coords(2,:), 'o')
 
 %% Algorithm Parameters

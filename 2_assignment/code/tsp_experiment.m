@@ -1,10 +1,10 @@
 %% Run the algorithm once
 clear;
-output = tsp(0.9, 0.01, 1000, true); % Run with hyperparameters
+output = tsp(0.99, 0.01, 100, true); % Run with hyperparameters
 
 %% Mutation test -> Run experiment multiple times
 clear; 
-num_generations = 1000;
+num_generations = 500;
 
 parfor iExp = 1:30
    output = tsp(0.8, 0.01, num_generations, false);
@@ -54,7 +54,7 @@ grid on; xlabel('Generations'); ylabel('Distances'); title('Travelling salesman 
 
 %% Crossover test -> Run experiment multiple times
 clear; 
-num_generations = 1000;
+num_generations = 500;
 
 parfor iExp = 1:30
    output = tsp(0.01, 0.1, num_generations, false);
