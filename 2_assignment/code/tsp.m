@@ -6,7 +6,7 @@ coordinates  = cityData.data(1:p.nCities, [3 2])';
 
 p.nGenes = p.nCities;
 p.maxGen    = num_generations;           %Max num of Generations
-p.popSize   = 200;           %Number of individuals -> population size
+p.popSize   = 50;           %Number of individuals -> population size
 p.selection_pressure = 2;             
 p.crossProb = crossProb;
 p.mutProb   = mutProb;
