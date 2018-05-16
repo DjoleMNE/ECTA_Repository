@@ -19,7 +19,7 @@
 % History:    12.12.93     file created 
 %             22.02.94     clean up, comments 
  
- 
+%% Stochastic Universal Sampling
 function NewChrIx = sus(FitnV,Nsel); 
  
 % Identify the population size (Nind) 
@@ -35,3 +35,5 @@ function NewChrIx = sus(FitnV,Nsel);
 % Shuffle new population 
    [ans, shuf] = sort(rand(Nsel, 1)); 
    NewChrIx = NewChrIx(shuf); 
+   
+% End of the function

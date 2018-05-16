@@ -13,7 +13,7 @@ function parentIds = tsp_selection(fitness, p)
 %Initialize 100x2 matrix of parent indices
 parentIds = NaN([p.popSize 2]);
 
-%Get 200 winners and make 100 pairs of them
+%Get 200 winners and make 100 pairs of them - Tournament selection
 for i=1:p.popSize*2
     for k=1:2         
         %Get random indeces of individuals.
@@ -30,19 +30,25 @@ for i=1:p.popSize*2
     end
 end
 
-%Stochastic Universal Resampling
-
+%Stochastic Universal Sampling selection
+% 
 % for pair = 1:p.popSize
-%     random_number = rand(1) * (1/p.selection_pressure);
-%     sum_weights = fitness(1);
-%     i = 1;
-%     for j = 1:p.selection_pressure
-%         arrow = random_number + (j - 1)/p.selection_pressure;
-%         while(arrow > sum_weights)
-%             i =+ 1;
-%             sum_weights =+ fitness(i);
-%         end      
-%         parentIds(pair,j) = i;        
-%     end
+%     
+%     %call external SUS function to get a pair of parents
+%     parentIds(pair, :) = sus(fitness, p.selection_pressure)';
+%     
+%     %Custom code - needs to be tested!
+% %     random_number = rand(1) * (1/p.selection_pressure);
+% %     sum_weights = fitness(1);
+% %     i = 1;
+% %     for j = 1:p.selection_pressure
+% %         arrow = random_number + (j - 1)/p.selection_pressure;
+% %         while(arrow > sum_weights)
+% %             i =+ 1;
+% %             sum_weights =+ fitness(i);
+% %         end      
+% %         parentIds(pair,j) = i;        
+% %     end
+% 
 % end
 %------------- END OF CODE --------------
