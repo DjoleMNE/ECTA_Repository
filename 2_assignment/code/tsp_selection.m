@@ -1,6 +1,5 @@
-function parentIds = my_selection(fitness, popSize, sp)
+function parentIds = tsp_selection(fitness, p)
 %Selection - Returns indices of parents for crossover
-% - Tournament selection:
 % Syntax:  parentIds = selection(fitness, p)
 %
 % Inputs:
@@ -12,14 +11,14 @@ function parentIds = my_selection(fitness, popSize, sp)
 
 %------------- BEGIN CODE --------------
 %Initialize 100x2 matrix of parent indices
-parentIds = NaN([popSize 2]);
+parentIds = NaN([p.popSize 2]);
 
 %Get 200 winners and make 100 pairs of them
-for i=1:popSize*2
+for i=1:p.popSize*2
     for k=1:2         
         %Get random indeces of individuals.
         %Syntax: range, [size of matrix]
-        randomPair = randi(popSize,[sp,1]);
+        randomPair = randi(p.popSize,[p.selection_pressure,1]);
         
         %choose index of max between two rows
         [winner_value, winner_index]= max(fitness(randomPair));
@@ -30,4 +29,20 @@ for i=1:popSize*2
         parentIds(i) = randomPair(winner_index);
     end
 end
+
+%Stochastic Universal Resampling
+
+% for pair = 1:p.popSize
+%     random_number = rand(1) * (1/p.selection_pressure);
+%     sum_weights = fitness(1);
+%     i = 1;
+%     for j = 1:p.selection_pressure
+%         arrow = random_number + (j - 1)/p.selection_pressure;
+%         while(arrow > sum_weights)
+%             i =+ 1;
+%             sum_weights =+ fitness(i);
+%         end      
+%         parentIds(pair,j) = i;        
+%     end
+% end
 %------------- END OF CODE --------------

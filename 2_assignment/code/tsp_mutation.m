@@ -1,4 +1,4 @@
-function children  = my_mutation(input_children, popSize, nGenes, mutProb)
+function children  = tsp_mutation(input_children, p)
 %Mutation - Make random changes in the child population
 % - Point mutation:
 % Syntax:  children  = my_mutation(children, p);
@@ -16,11 +16,15 @@ function children  = my_mutation(input_children, popSize, nGenes, mutProb)
 children = input_children;
 
 %Iterate over all childrens and their genes
-for child = 1:popSize
-    gene_mutate = rand(1, nGenes);
-    for gene = 1:nGenes
-        if(gene_mutate(gene) < mutProb)
-            children(child, gene) = ~children(child, gene);
+for child = 1:p.popSize
+    gene_mutate = rand(1, p.nGenes);
+    for gene_index = 1:p.nGenes
+        if(gene_mutate(gene_index) < p.mutProb)
+%             swap_index = randi(p.nGenes);
+%             while(swap_index == gene_index)
+%                 swap_index = randi(p.nGenes);
+%             end
+            children(child, :) = swap_genes(children(child, :), gene_index);
         end
     end
 end
