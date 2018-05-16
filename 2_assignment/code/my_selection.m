@@ -1,4 +1,4 @@
-function parentIds = my_selection(fitness, popSize, sp)
+function selection = my_selection(fitness, popSize, selection_pressure)
 %Selection - Returns indices of parents for crossover
 % - Tournament selection:
 % Syntax:  parentIds = selection(fitness, p)
@@ -12,22 +12,13 @@ function parentIds = my_selection(fitness, popSize, sp)
 
 %------------- BEGIN CODE --------------
 %Initialize 100x2 matrix of parent indices
-parentIds = NaN([popSize 2]);
-
+selection = randi(popSize,[popSize 2]);
 %Get 200 winners and make 100 pairs of them
-for i=1:popSize*2
-    for k=1:2         
-        %Get random indeces of individuals.
-        %Syntax: range, [size of matrix]
-        randomPair = randi(popSize,[sp,1]);
-        
-        %choose index of max between two rows
-        [winner_value, winner_index]= max(fitness(randomPair));
-        
-        %Fill out parentIds matrix...syntax for matrix(i):
-        %goes over whole first row, than over  whole second row, and so on.
-        %Fill 100x2 matrix -> 100 pairs of 200 parents.
-        parentIds(i) = randomPair(winner_index);
-    end
+tournament_group = randi(popSize,[selection_pressure,popSize*2]);
+%choose index of max between two rows
+[~, winner_index]= max(fitness(tournament_group));
+for i=1:length(tournament_group); 
+selection(i) = tournament_group(winner_index(i),i);
 end
+
 %------------- END OF CODE --------------

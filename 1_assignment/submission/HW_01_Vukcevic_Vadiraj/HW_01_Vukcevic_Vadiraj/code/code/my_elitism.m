@@ -1,4 +1,4 @@
-function eliteIds = my_elitism(fitness, popSize, elitePerc)
+function eliteIds = my_elitism(fitness, p)
 %Elitism - Get indices of individual(s) to continue unchanged into next pop
 % - Standard Elitism:
 %   1) Find 1 best performing individual
@@ -8,15 +8,24 @@ function eliteIds = my_elitism(fitness, popSize, elitePerc)
 %
 % Inputs:
 %    fitness    - [M X 1] - Fitness of every individual in the population
-%    elitePercent         - Percentage of pop to take as elites (min 1)
+%    p          - _struct - Hyperparameter struct
+%     .elitePercent         - Percentage of pop to take as elites (min 1)
 %
 % Outputs:
 %    eliteIds   - [nElites X 1] - Indices of each elite
+%
+%
+% See also: selection, crossover, mutation, monkeyGa
+
+% Author: Adam Gaier
+% Bonn-Rhein-Sieg University of Applied Sciences (BRSU)
+% email: adam.gaier@h-brs.de
+% Feb 2018; Last revision: 20-Feb-2018
 
 %------------- BEGIN CODE --------------
-elite_individuals = popSize* elitePerc;
+elite_individuals = p.popSize* p.elitePerc;
 
-[~,sorted_ids]= sort(fitness,'descend');  
+[sorted_values,sorted_ids]= sort(fitness,'descend');  
 
 eliteIds = sorted_ids(1:ceil(elite_individuals));              
 %------------- END OF CODE --------------

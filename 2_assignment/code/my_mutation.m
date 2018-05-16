@@ -15,13 +15,27 @@ function children  = my_mutation(input_children, popSize, nGenes, mutProb)
 %Initialize children matrix and seed of random generator
 children = input_children;
 
-%Iterate over all childrens and their genes
-for child = 1:popSize
-    gene_mutate = rand(1, nGenes);
-    for gene = 1:nGenes
-        if(gene_mutate(gene) < mutProb)
-            children(child, gene) = ~children(child, gene);
-        end
+for child = length(children);
+    child = children(1,:);
+    for j = 1: length(child);
+        if rand < mutProb
+            previous = child(j);
+            index = randi(length(child));
+            child(j) = child(index);
+            child(index) = previous;
+            children(j,:)= child;
+        end  
     end
 end
+
+%firstindex = randi([1,nGenes],1);
+%secondindex = randi([1,nGenes],1);
+%children = chromosome;
+% 
+% new_chromosome(:,firstindex) = chromosome(:,secondindex);
+% new_chromosome(:,secondindex) = chromosome(:,firstindex);
+%children(firstindex:secondindex) = chromosome(fliplr(firstindex:secondindex));
+
+end
+
 %------------- END OF CODE --------------
