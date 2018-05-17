@@ -1,31 +1,31 @@
 %% Run the algorithm once
 clear;
-output = tsp(0.99, 0.01, 1000, true); % Run with hyperparameters
+output = tsp(0.9, 0.01, 2000, true); % Run with hyperparameters
 
 %% Mutation test -> Run experiment multiple times
 clear; 
-num_generations = 500;
+num_generations = 1000;
 
 parfor iExp = 1:30
-   output = tsp(0.8, 0.01, num_generations, false);
+   output = tsp(0.99, 0.01, num_generations, false);
    fitness(iExp,:) = output.best_distances;
 end
 result_1 = fitness;
 
 parfor iExp = 1:30
-   output = tsp(0.8, 0.1, num_generations, false);
+   output = tsp(0.99, 0.1, num_generations, false);
    fitness(iExp,:) = output.best_distances;
 end
 result_2 = fitness;
 
 parfor iExp = 1:30
-   output = tsp(0.8, 0.99, num_generations, false);
+   output = tsp(0.99, 0.99, num_generations, false);
    fitness(iExp,:) = output.best_distances;
 end
 result_3 = fitness;
 
 parfor iExp = 1:30
-   output = tsp(0.8, 0.5, num_generations, false);
+   output = tsp(0.99, 0.5, num_generations, false);
    fitness(iExp,:) = output.best_distances;
 end
 result_4 = fitness;
@@ -54,28 +54,28 @@ grid on; xlabel('Generations'); ylabel('Distances'); title('Travelling salesman 
 
 %% Crossover test -> Run experiment multiple times
 clear; 
-num_generations = 500;
+num_generations = 1000;
 
 parfor iExp = 1:30
-   output = tsp(0.01, 0.1, num_generations, false);
+   output = tsp(0.01, 0.01, num_generations, false);
    fitness(iExp,:) = output.best_distances;
 end
 result_1 = fitness;
 
 parfor iExp = 1:30
-   output = tsp(0.1, 0.1, num_generations, false);
+   output = tsp(0.1, 0.01, num_generations, false);
    fitness(iExp,:) = output.best_distances;
 end
 result_2 = fitness;
 
 parfor iExp = 1:30
-   output = tsp(0.99, 0.1, num_generations, false);
+   output = tsp(0.99, 0.01, num_generations, false);
    fitness(iExp,:) = output.best_distances;
 end
 result_3 = fitness;
 
 parfor iExp = 1:30
-   output = tsp(0.5, 0.1, num_generations, false);
+   output = tsp(0.5, 0.01, num_generations, false);
    fitness(iExp,:) = output.best_distances;
 end
 result_4 = fitness;

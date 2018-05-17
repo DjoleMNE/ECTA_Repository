@@ -80,7 +80,12 @@ if plot_single
     subplot(1,2,1);
         plotTsp(output.best(:,end)', coordinates);
         title('Best individual')
+             set(gca,'Fontsize',18);
+
     subplot(1,2,2);
         plot(1:1:p.maxGen, output.best_distances);
-        title('Learning curve')
+        title('Learning curve - TSP single run')
+     set(gca,'Fontsize',18);
+     
+     grid on; xlabel('Generations'); ylabel('Distances');
 end
