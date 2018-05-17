@@ -1,6 +1,6 @@
 %% Run the algorithm once
 clear;
-output = tsp(0.9, 0.01, 2000, true); % Run with hyperparameters
+output = tsp(0.99, 0.01, 2000, true); % Run with hyperparameters
 
 %% Mutation test -> Run experiment multiple times
 clear; 
