@@ -1,5 +1,5 @@
 %PTS2IND Converts a vector of control pts to an individual with a genotype
-%of control points and a phenotype of interpolated of cartesian points
+%of control points and a phenotype of interpolated cartesian points
 
 
 function [ foil, nurbs ] = pts2ind( ctlPts, varargin )
