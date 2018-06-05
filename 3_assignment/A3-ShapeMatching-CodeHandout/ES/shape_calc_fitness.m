@@ -19,7 +19,7 @@ for index = 1:p.popSize
 
     % Total fitness (mean squared error)
     fitness = mean([errorTop.^2; errorBottom.^2]);
-    result(index, 1) = 1 / (fitness + 0.1) ; 
+    result(index, 1) = 1 / (fitness + 0.01) ; 
 end 
 
 % for index = 1:p.popSize
