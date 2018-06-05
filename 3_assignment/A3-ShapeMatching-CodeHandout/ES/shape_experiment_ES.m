@@ -10,7 +10,7 @@ nacaNum = [0, 0, 1, 2];                     % NACA Parameters
 nacafoil= create_naca(nacaNum, numEvalPts); % Create foil
 
 % Perform evolution
-output = shape_ES(rand(1) + 0.05, nacafoil, numEvalPts); % Run with hyperparameters
+output = shape_ES(rand(1), nacafoil, numEvalPts); % Run with hyperparameters
 individual = output.best(:, end);
 foil = output.best_foil(:, :, end);
 

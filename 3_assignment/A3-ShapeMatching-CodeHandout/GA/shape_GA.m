@@ -3,7 +3,7 @@ function output = shape_GA(crossProb, mutProb, num_generations, nacafoil, numEva
 %% randomly init population
 p.nGenes = 32;
 p.maxGen    = num_generations;           %Max num of Generations
-p.popSize   = 50;           %Number of individuals -> population size
+p.popSize   = 100;           %Number of individuals -> population size
 p.selection_pressure = 2;             
 p.crossProb = crossProb;
 p.mutProb   = mutProb;
