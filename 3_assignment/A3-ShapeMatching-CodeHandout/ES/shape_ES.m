@@ -20,7 +20,7 @@ count = 1;
 while count < 20000
     
     for index = 1:p.nGenes    
-        noise = 0.5 .* randn(p.popSize, 1);
+        noise = randn(p.popSize, 1);
         temp = population(index) + sigma * noise;
         while temp > 0.5 || temp < -0.5
             noise = 0.5 * randn(p.popSize, 1);
