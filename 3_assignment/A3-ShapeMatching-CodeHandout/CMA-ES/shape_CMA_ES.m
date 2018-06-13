@@ -25,7 +25,7 @@ VarMax= 0.5;             % Upper Bound of Decision Variables
 %% CMA-ES Settings
 
 % Maximum Number of Iterations
-MaxIt = 300;
+MaxIt = 20000;
 
 % Population Size (and Number of Offsprings)
 lambda=(4+round(3*log(nVar)))*10;
@@ -78,7 +78,7 @@ M(1).Cost = value;
 M(1).Foil = matrix;
 
 BestSol = M(1);
-BestCost=zeros(MaxIt,1);
+BestCost=zeros(MaxIt,1);    % Record the maximum fitness
 
 %% CMA-ES Main Loop
 
@@ -169,4 +169,5 @@ end
 
 %% Setting outputs
 output.best = BestSol.Position;
+output.best_fitness = BestCost;
 output.best_foil = BestSol.Foil;

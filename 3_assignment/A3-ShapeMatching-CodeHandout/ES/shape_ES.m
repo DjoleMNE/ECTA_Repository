@@ -15,9 +15,11 @@ fitness = value;
 foil = matrix;
 new_population = population;
 count = 1;
+MaxIt = 20000;
+fitness_values = zeros(MaxIt,1);    % Record the maximum fitness
 
 %% Generation Loop
-while count < 20000
+while count < MaxIt
     
     for index = 1:p.nGenes    
         noise = randn(p.popSize, 1);
@@ -32,15 +34,16 @@ while count < 20000
     [value, matrix] = shape_calc_fitness(new_population, nacafoil, numEvalPts, p);      
     new_fitness = value;
     new_foil = matrix;
-    count = count + 1; 
     
     if new_fitness >= fitness
        successful_mutations = successful_mutations + 1; 
        population = new_population;
-       fitness = new_fitness
+       fitness = new_fitness;
        foil = new_foil;
     end 
     
+    fitness_values(count) = fitness;
+
     if mod(total_time, time_period) == 0
                 
         if (successful_mutations / time_period) < 1/5
@@ -52,8 +55,10 @@ while count < 20000
         successful_mutations = 0;
     end
     total_time = total_time + 1;
+    count = count + 1; 
 end
 
 %% Setting outputs
 output.best = population;
 output.best_foil = foil;
+output.fitness = fitness_values;
