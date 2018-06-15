@@ -1,0 +1,165 @@
+\documentclass{article}
+
+
+% load package with some of the available options - you may not need this!
+\usepackage[framed,autolinebreaks,useliterate]{mcode}
+
+% for checklist
+\usepackage{enumitem,amssymb}
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\done}{\rlap{$\square$}{\raisebox{2pt}{\large\hspace{1pt}\cmark}}%
+\hspace{-2.5pt}}
+\newcommand{\wontfix}{\rlap{$\square$}{\large\hspace{1pt}\xmark}}
+
+
+% something NOT relevant to the usage of the package.
+\usepackage{graphicx}
+\usepackage{url,textcomp}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{18pt}
+\title{ECTA Homework 3\\Shape Matching Problem}
+\author{\color{red} Djordje Vukcevic, \texttt{djordje.vukcevic@smail.inf.h-brs.de}\\
+	\color{red}	Supriya Vadiraj,\texttt{supriya.vadiraj @smail.inf.h-brs.de}}
+% //////////////////////////////////////////////////
+
+\begin{document}
+
+\maketitle
+\begin{center}
+	\begin{minipage}{1\linewidth}
+		\centering
+			\includegraphics[scale=0.6]{img/wingtypes.png}
+	\end{minipage}
+\end{center}
+
+To optimize wings, it is useful to start with known designs and then adjust them to specific tasks. How to convert from one representation to another? In this assignment you will convert the 4-dimensional NACA wing specific representation into a general B-Spline representation with 32 control points. You will compare 2 evolutionary methods, Genetic Algorithms and Evolution Strategies.
+
+\newpage
+
+\section{Assignment Description}
+	Shape Matching Problem
+	\begin{enumerate}
+		\item Write your own Genetic Algorithm to solve the shape matching problem
+		\item Write your own version of the Covariance Matrix Adaptation Evolution Strategy (CMA-ES) to solve the shape problem.
+		\item Compare the performance of the two algorithms on three airfoils (NACA airfoil shapes: 0012, 5522, 9735). Is there a significant difference between a GA and an ES? 
+	\end{enumerate}
+
+	\begin{itemize}
+ 	\item Grading Scheme
+ 		\begin{todolist}
+ 		\item Genetic Algorithm (20 pts)
+ 			\begin{todolist}
+ 			\item Bitstring \textit{or }Real-Valued ($20$ pts)
+ 			\item Bitstring \textit{and }Real-Valued ($+10$pts)
+ 			\end{todolist}
+ 		\item Evolution Strategies (60 pts)
+ 		  	\begin{todolist}
+ 			\item ES with $1/5$ rule ($30$ pts)
+ 			\item CMA-ES with out evolution paths ($30$ pts)
+ 			\item CMA-ES with evolution paths ($+10$)
+ 			\end{todolist}
+ 		\item Comparisons (20 pts)
+ 		  	\begin{todolist}
+ 			\item Big beautiful wall of data
+ 			\end{todolist}
+ 		\end{todolist}
+	\end{itemize}
+\newpage
+
+
+\section{Submission Instructions}
+To be perfectly clear we expect two submissions to LEA:
+\begin{enumerate}
+	\item 1 PDF (report) -- a modified version of your submission PDF, with your own code snippets, figures, and responses inserted
+	\item 1 ZIP (code and data)   -- a .zip file containing all code use to run experiments (.m files) \textit{and} resulting data as a .mat file
+	\item Make sure to follow the naming scheme\newline HW\_NUMBER\_LASTNAME1\_LASTNAME2.suffix
+	\item $\rightarrow$ A valid name would be HW\_02\_Smith\_Fernandez.pdf
+	\item Make sure both team members use the same filename!
+\end{enumerate}
+
+\newpage
+
+
+\newpage
+\section{The Assignment}
+
+\subsection{Genetic Algorithm}
+\begin{itemize}
+	\item Genetic Algorithms are typically represented by a string, this string could take many forms, such as bitsrings or real-valued numbers. What are the advantages and disadvantages of each encoding in this application? How would you convert each into 32 real-valued numbers? How could you perform crossover and mutation in each? Which do you think would be best?
+	\begin{enumerate}
+		\item Bitstring :
+		\color{blue}\textit{In Genetic Algorithms all the chromosomes are usually represented as bit strings. This encoding style remains suitable in discrete solution spaces. The reason to consider using bits instead of integers has the necessity to do with the range of data that the pool is created with. Having 32 integers means that crossover can only occur on 32 values that are taken as whole values. But having 1024 bits (32 * 32 bit integers) gives a finer granularity. And adds to the following advantages, by allowing the mutation to be bit flipping and crossover by combining the top part of one integer and the bottom part of another.}
+		\item \color{black}Real-valued :\color{blue}\textit{If real coding is used, the algorithm uses a convex combination of the two candidates in the mating pool according to some probability pcross to produce two new candidate solutions for the next iteration. And in mutation the algorithm acts on candidate solutions, which are real coded by manipulating the value of the candidates as follows: for each
+			value place that may be held by a candidate solution, we add the value rand([−5,5]) at  that  value  place  to  the  actual  candidate  solution  with probability pmut, where rand([−5,5]) is a random integer in ([−5,5]). This is to cover a range of mutations ‘about’ the  current candidate  solution  consistent  with  the  place value separation in the decimal system.}
+	\end{enumerate}
+	\item Implement the encoding you think will perform best and plots its median performance over 20 iterations, using 20,000 evaluations.
+\item \color{blue}\textit{This is the performance of genetic algorithm with real valued numbers. We ran it for 5 iterations.}
+\item
+	\includegraphics[scale=0.5]{img/fitnessGA.png}
+	\includegraphics[scale=0.6]{img/GA5.png}
+
+\end{itemize}
+
+\newpage
+\subsection{Evolution Strategies}
+\begin{itemize}
+	\item CMA-ES is an advanced version of ES. As a first step implement a simple ES first. 
+		\begin{itemize}
+			\item In this ES mutation of all parameters should have equal strength which is adjusted by the 1/5th rule.\\(\textit{every N generations change mutation strength: if $>1/5$th of mutations resulted in an better fitness (i.e. a best solution) increase mutation strength, otherwise decrease mutation strength}). Test your implementation on \underline{one} of the shapes.
+			\item Compare to your best GA. Is one significantly better than the other?
+			\color{blue}\textit{The comparison has been made between ES and GA. The performance of ES has been relatively slower than GA.}\color{black}
+		
+		\end{itemize}
+	\item Now program CMA-ES \underline{without evolution paths}.
+	\begin{itemize}
+		\item Compare to your ES results. Is a there a significant improvement?
+		\color{blue}\textit{Yes, there have been significant improvements. CMA-ES with no evolution paths, converges faster than ES here}\color{black}
+		\item
+		\includegraphics[scale=0.5]{img/ESvsCMAE.png}	
+	\end{itemize}
+
+	\item \textit{***Extra Credit***} Now program CMA-ES \underline{with evolution paths}.
+		\begin{itemize}
+		\item Compare to your previous CMA-ES results. Is a there a significant improvement?
+		\color{blue}\textit{Yes, also there have been significant improvements. CMA-ES with evolution paths, converges faster than CMA-ES with no evolution paths here.}\color{black}
+	\item	\includegraphics[scale=0.5]{img/CMAvsCMAEnoep.png}
+		\item \color{blue}\textit{Performance of CMAES-without EP, for a single run with 200 generations}	\item \includegraphics[scale=0.5]{img/CMAES-withoutEP.png}
+		\item \color{blue}\textit{Performance of CMAES-with EP, for a single run with 200 generations}	\item \includegraphics[scale=0.5]{img/CMAES-withEP.png}
+	
+		\end{itemize}
+\end{itemize}
+
+\newpage
+\subsection{Comparisons}
+Produce one plot which shows the performance of each algorithm. Run each algorthm 20 times on each shape (NACA airfoil shapes: 0012, 5522, 9735), with a budget of 20,000 function evaluations. For each run record the best ever found individual at each evaluation. For each algorithm plot the median fitness of this best ever individual. This may take some time, write a script to run and collect this data. The following should be on this plot (leaving out any algorithms you chose not to implement):
+\begin{enumerate}
+	\item Binary GA
+	\item Real-Valued GA
+	\item ES
+	\item CMA-ES (without evolution paths)
+	\item CMA-ES (with evolution paths)
+	\item \color{blue}All the three graphs have been plotted for 3rd wing, [9,7,3,5]
+	\item
+	\includegraphics[scale=0.5]{img/finalplotComparison.png}
+\end{enumerate}
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
