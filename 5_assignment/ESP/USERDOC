@@ -1,0 +1,79 @@
+-----------------------------------------------------------------------
+
+USERDOC for ESP.3.0
+
+-----------------------------------------------------------------------
+
+To run ESP on the double pole problem type
+
+> esp-dpole --h
+
+which will list the options:
+Usage: esp-dpole [OPTION...] ARG1
+Enforced Sub Populations neuroevolution system.
+
+      --dar                  Disable adding/removing of subpops
+  -g, --generations=G        Max number of generations
+  -m, --mutation=M           Mutation rate
+      --min                  Minimize instead of maximize fitness
+  -n, --popsize=N            Size of subpopulations
+      --netlevel=Size        Network level evolution
+      --pop=popfile          Load population file
+  -s, --seed=S               Random seed
+      --save                 Save networks?
+      --seednet=netfile      Evolve around a network
+      --stag=S               Stagnation criteria
+  -t, --nettype=FF,SRN,FR    Type of network
+      --test=netfile         File of network to be tested
+      --verbose              Print individual fitnesses
+  -z, --numpops=Z            Number of subpopulations
+
+ Cart Pole options:
+      --nm                   Non-Markov
+      --noise=N              Sensor noise
+      --pa=A                 Initial angle of long pole in degrees
+      --pl=L                 Length of short pole
+      --poles=P              Number of poles
+      --traj=T               Trajectory noise
+
+  -?, --help                 Give this help list
+      --usage                Give a short usage message
+  -V, --version              Print program version
+
+Mandatory or optional arguments to long options are also mandatory or optional
+for any corresponding short options.
+
+
+For example 
+> esp-dpole -z 5  -s 2 -t3 --nm
+
+This will run ESP with 5 hidden units (subpopulations) of
+size 100 each, a seed value of 2, with fully recurrent networks since
+the environment is non-Markov (option --nm).
+ESP will then evolve neural networks to balance both poles, where the
+long pole is 1m and the short pole is initially 0.1m. 
+During evolution ESP may periodically do one of the following: 
+                         1. Burst Mutate
+                         2. Add a subpopulation
+			 3. Remove a subpopulation
+
+The code for coordinating these three actions is found in the 
+ESP method EST::handleStagnation (in file ESP.C).  The member ESP::stagnation
+sets the number of generations allowed to transpire without performance 
+improvement before some action is taken.
+
+By default, ESP will save the population and the best network with 
+the task is finish or if the run is interrupted by the user using
+Ctrl-C.  A population can be load as the starting point for evolution
+using the --pop option and providing the population file name.  Network
+files can be loaded either to test a network: --test, or to use the network 
+a the seed for a burst mutation: --seednet.
+
+If the --save option is used, ESP will save a network when it has a higher
+fitness that any other network found so far.
+
+The fitness (# of time-steps poles where balanced) of the best network 
+for each generation is displayed along with the fitness of the best
+network found during each task.
+
+

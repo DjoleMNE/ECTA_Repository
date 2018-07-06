@@ -1,0 +1,122 @@
+][][][][][][][][][][][][][]][][][][][][][][][][][][][][]][][][][][][][[][
+][
+][  ESP: Enforced Sub-Populations.
+][
+][][][][][][][][][][][][][][][][][][][][][][][][][[[][][][][][][][][][][[
+
+Version 3.0 8/5/02
+
+Copyright (C) 2002   Faustino J. Gomez
+
+This package contains the C++-code for evolving neural networks
+to solve the double pole balancing problem.
+See the file INSTALL for instructions on how to
+install ESP; see USERDOC for instructions on how to run it; see FILES
+for explanation on the software package itself. 
+
+In case you don't know what ESP is, see e.g.
+@TechReport{gomez:tr248,
+  author       = "Faustino Gomez and Risto Miikkulainen",
+  title	       = "Incremental Evolution of Complex General Behavior",
+  institution  = UTCS,
+  year	       = 1996,
+  number       = "AI96-248",
+  annote       = "Subsumed by the journal version \cite{gomez:ab97}",
+}
+
+or this for a more complete explanation of the pole balancing problem
+that come with this package:
+@InProceedings{gomez:ijcai99,
+  author       = "Faustino Gomez and Risto Miikkulainen",
+  title	       = "Solving Non-{M}arkovian Control Tasks with
+                  Neuroevolution",
+  booktitle    = IJCAI-99,
+  year	       = 1999,
+  address      = "Denver, CO",
+  publisher    = KAUF,
+  url	       = UTCSNNDOCROOT # "gomez.ijcai99.ps.Z",
+  site	       = "Stockholm, Sweden",
+}
+
+which is available at:
+http://www.cs.utexas.edu/users/nn/pages/publications/neuro-evolution.html.
+
+----------------------------------------------------------------------------
+
+For detailed documentation of the code go to:
+
+http://www.cs.utexas.edu/users/inaki/espdoc
+
+----------------------------------------------------------------------------
+
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License version 2 as published
+by the Free Software Foundation. This program is distributed in the hope
+that it will be useful, but without any warranty; without even the
+implied warranty of merchantability or fitness for a particular purpose.
+See the GNU General Public License for more details.
+
+We hope that this software will be a useful starting point for your own
+explorations in Neuroevolution. The software is provided as is,
+however, we will do our best to maintain it and accommodate
+suggestions. If you want to be notified of future releases of the
+software or have questions, comments, bug reports or suggestions, send
+email to inaki@cs.utexas.edu.
+
+--------------------------------------------------------------------------
+
+Files *.h *.C 
+-----
+
+	           main-esp  :  The driver which use argp to parse command line
+ 		                options.
+
+	          	 NE  :  Abstract base class for Neuroevolution 
+ 				algorithms. 
+
+			ESP  :  The ESP implementation.
+
+		 Population  :  Template class for populations of 
+		                either Neurons or Networks. 
+
+  		Environment  :  Abstract base class for changing the environment.
+
+	             Neuron  :  Neuron class.
+
+		    Network  :  Abstract base class for neural networks.
+
+	 FeedForwardNetwork  :  Multilayer perceptron with 1 hidden layer.
+
+      FullyRecurrentNetwork  :  Single layer fully connected.
+ 
+     SimpleRecurrentNetwork  :  Elman network.
+
+SecondOrderRecurrentNetwork  :  Network with second order connections.
+
+	           TestNets  :  Function for loading and testing networks.	
+
+		  Cart_Pole  :  The double pole balancing environment.       
+
+
+----------------------------------------------------------------------------
+
+
+The package requires a C++ compiler that supports STL (e.g. gcc)
+
+To install do the following:
+
+tar xvfz ESP.3.0.tar
+make depend
+make esp-dpole
+
+----------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
