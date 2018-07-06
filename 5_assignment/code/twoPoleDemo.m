@@ -9,6 +9,7 @@
 %             thet2a_dot  <- the angular velocity of the 2nd pole.
 %           ]
 fig = figure(1);
+p.simParams.force = 10.0;
 totalSteps = 1000;
 initialState = [0 0 .017 0 0.0 0]';  % initial state (note, it is a column vector) (1 degree = .017 rad)
 scaling = [ 2.4 10.0 0.628329 5 0.628329 16]'; % Divide state vector by this to scale state to numbers between 1 and 0
