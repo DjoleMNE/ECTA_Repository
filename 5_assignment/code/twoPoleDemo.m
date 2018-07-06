@@ -28,14 +28,15 @@ for step=1:totalSteps
         scaledInput = state./scaling; % Normalize state vector for ANN
         
         % Output should be the response of your neural network. Here I just 
-        % use a random number between 0 and 1. Put your ANN code here. 
+        % use a random number between 0 and 1. Put your ANN code here.
         % Output should be between -1 (full force left) and 1 (full force right)
-        output = 2*(rand(1)-0.5);
-        action = output*p.simParams.force; % Scale to full force
+        output = ff_ANN(state', 5, 1);
+        %output = 2*(rand(1)-0.5);
+        action = output * p.simParams.force; % Scale to full force
         
         %% SIMULATE RESULT
         % Take action and return new state:
-        state = cart_pole2( state, action );        
+        state = cart_pole2(state, action);        
         
         %% Visualize result (optional and slow, don't use all the time!)
         %clf
