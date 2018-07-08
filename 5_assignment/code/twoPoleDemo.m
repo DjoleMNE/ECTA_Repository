@@ -32,10 +32,12 @@ for step = 1:totalSteps
     end
     
     failureConditions = ~[onTrack notFast pole1Up pole2Up];
-    if any(failureConditions)   
-        fitness = step;  disp(failureConditions); break;
-%         fitness = step; break;
-        
+    if any(failureConditions)
+        if p.visualize
+            fitness = step;  disp(failureConditions); break;
+        else
+            fitness = step; break;
+        end
     else % Do the next time step - ACTION SELECTION [your code goes here]
         scaledInput = state./scaling; % Normalize state vector for ANN
         
@@ -47,6 +49,9 @@ for step = 1:totalSteps
         end
         
         output = ff_ANN(current_state, weight_matrix, p);
+        if p.visualize
+            disp(output)
+        end
         
         if output > 1.0
             output = 1.0;
@@ -67,8 +72,7 @@ for step = 1:totalSteps
             if p.bothPoles
                 cpvisual(fig, 0.5, state([1 2 5 6]), [-3 3 0 2], action );% Pole 2
             end
+            pause(0.01);
         end
-        
-        pause(0.01);
     end
 end
