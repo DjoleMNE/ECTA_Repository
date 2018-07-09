@@ -12,7 +12,8 @@ function best_matrix = esp(p)
 % p.subPop_size = 15;
 % p.total_individuals = p.num_hidden * p.subPop_size;
 % p.num_generations = 50;
-% 
+% p.goal_fitness = 1000;
+
 % if p.bothPoles 
 %     p.input_size = 6;
 % else
@@ -42,14 +43,20 @@ for node = 1:p.num_hidden
 end
 weight_matrix = zeros(p.net_size);
 best_matrix   = weight_matrix;
-best_fintess  = 0;
+best_fitness  = 0;
 
 %% Perform evolution
 for step = 1:p.num_generations
+    % Stop training if the problem is solved
+    if best_fitness >= p.goal_fitness
+        disp("Goal Reached - Stopping Training");
+        disp(step)
+        break;
+    end
     
     %% Evaluation
     % Evaluate different NNs until average limit is reached
-    for iteration = 1:p.total_individuals * p.num_trials
+    for iteration = 1:p.subPop_size * p.num_trials
         %Generate random index of an individual and save it in vector
         chosen_individuals = randi(p.subPop_size, [1, p.num_hidden]);
 
@@ -66,8 +73,9 @@ for step = 1:p.num_generations
 
         % Perform the simulation and evaluate the choosen NN
         fitness = twoPoleDemo(p, weight_matrix);
-        if fitness > best_fintess
+        if fitness > best_fitness
             best_matrix  = weight_matrix;
+            disp(fitness);
             best_fitness = fitness;
         end
         for node = 1:p.num_hidden
@@ -94,7 +102,7 @@ for step = 1:p.num_generations
         %Make all possible combinations of them
         parent_comb = nchoosek(top_individuals, 2);
 
-        %Perfom crossover for all combinations/pairs of parents
+        %Perfom crossover for all combinations/pairs of best parents
         new_pop = zeros(size(top_individuals, 2) * 2, p.chromo_size);
         pair_count = 0;
         for comb = 1:size(parent_comb, 1)
@@ -110,7 +118,6 @@ for step = 1:p.num_generations
         
         %Replace lowest-ranking half of the subpopulation with newly
         %created individuals. Reset count and fitness for half of subpopulation
-%         [~, sortend_indices] = sort(score_vector, 'ascend');
         half_point = floor(p.subPop_size/2);
         count = 1;
         for index_1 = p.subPop_size:p.subPop_size - half_point + 1
