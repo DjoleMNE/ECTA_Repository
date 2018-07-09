@@ -40,19 +40,31 @@ for step = 1:totalSteps
         end
     else % Do the next time step - ACTION SELECTION [your code goes here]
         scaledInput = state./scaling; % Normalize state vector for ANN
+        current_state = scaledInput';
         
         % Output should be between -1 (full force left) and 1 (full force right)
+        if ~p.velocity_inclued
+            if p.bothPoles
+                current_state = scaledInput([1 3 5])';
+            else
+                current_state = scaledInput([1 3])';
+            end
+        end
+        
         if p.bias_included
-            current_state = [scaledInput(1 : p.input_size - 1)' 1];
-        else 
-            current_state = scaledInput(1 : p.input_size)';
+            current_state = [current_state 1];
         end
-        
-        output = ff_ANN(current_state, weight_matrix, p);
-        if p.visualize
-            disp(output)
+        if p.recurrent_nn
+            output = R_ANN(current_state, weight_matrix, p);
+        else
+            output = ff_ANN(current_state, weight_matrix, p);
         end
+%         if p.visualize
+%             disp(output)
+%         end
         
+        % Prune the output. Never happed to be bigger then 1.0, but for
+        % every case to be pruned
         if output > 1.0
             output = 1.0;
             disp("Too strong force")
