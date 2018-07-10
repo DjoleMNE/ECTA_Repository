@@ -1,21 +1,23 @@
 %  strfitnessfct = 'frosenbrock';  % name of objective/fitness function
-function output = shape_cmaes(MaxGen)
-  nGenes = 32;               % number of objective variables/problem dimension
+function output = shape_CMA_EP_ES(MaxGen, function_ID, dimension_num)
+  nGenes = dimension_num;               % number of objective variables/problem dimension
   xmean = rand(nGenes,1);    % objective variables initial point
   sigma = 0.3;          % coordinate wise standard deviation (step size)
-  stopfitness = 1e-10;  % stop if fitness < stopfitness (minimization)
-  stopeval = 1e3*nGenes^2;   % stop after stopeval number of function evaluations
-  numEvalPts = 256;                           % Num evaluation points
-  nacaNum = [5,5,2,2];                        % NACA Parameters
-  nacafoil= create_naca(nacaNum,numEvalPts); % Create foil
+  if function_ID == 1
+      stopfitness = 1e-16;  % stop if fitness < stopfitness (minimization)
+  elseif function_ID == 2
+      stopfitness = 10;  % stop if fitness < stopfitness (minimization)
+  else
+      stopfitness = 100;
+  end
+
   % Strategy parameter setting: Selection  
   lambda = 4+floor(3*log(nGenes));  % population size, offspring number
   mu = lambda/2;               % number of parents/points for recombination
   weights = log(mu+1/2)-log(1:mu)'; % muXone array for weighted recombination
   mu = floor(mu);        
   weights = weights/sum(weights);     % normalize recombination weights array
-  mueff=sum(weights)^2/sum(weights.^2); % variance-effectiveness of sum w_i x_i
-  
+  mueff=sum(weights)^2/sum(weights.^2); % variance-effectiveness of sum w_i x_i 
 
 
   % Strategy parameter setting: Adaptation
@@ -38,20 +40,37 @@ function output = shape_cmaes(MaxGen)
   % -------------------- Generation Loop --------------------------------
   counteval = 0;  
   num_gen = MaxGen;
-  max_fitness = zeros(MaxGen,1);
+  min_fitness = zeros(MaxGen,1);
   median_fitness = zeros(MaxGen,1);
 
 for gen = 1:num_gen
       % Generate and evaluate lambda offspring
-      for k=1:lambda,
+%       fitness = zeros(lambda,1);
+%       x = zeros(nGenes, lambda);
+      
+      for k=1:lambda
           x(:,k) = xmean + sigma * B * (D .* randn(nGenes,1)); % m + sig * Normal(0,C) 
-          fitness(k) = shape_cmaes_fitness(x(:,k),nacafoil,numEvalPts);
-          counteval = counteval+1;
+          if function_ID == 1
+              if dimension_num == 2
+                  fitness(k) = frosen2D(x(:,k));
+              else
+                  fitness(k) = frosen12D(x(:,k)); 
+              end
+          elseif function_ID == 2
+              if dimension_num == 2
+                  fitness(k) = frastrigin2D(x(:,k));
+              else
+                  fitness(k) = frastrigin12D(x(:,k));
+              end
+          else
+              fitness(k) = oneHundredDfunction(x(:,k));
+          end
+          counteval = counteval + 1;
       end
     
       % Sort by fitness and compute weighted mean into xmean
-      [fitness, index] = sort(fitness,'descend'); % minimization
-      max_fitness(gen,1) = max(fitness);
+      [fitness, index] = sort(fitness); % minimization
+      min_fitness(gen,1) = min(fitness);
       median_fitness(gen,1) = median(fitness);
       xold = xmean;
       xmean = x(:,index(1:mu))* weights;   % recombination, new mean value
@@ -84,28 +103,8 @@ for gen = 1:num_gen
        break;
     end
     xmin = x(:, index(1));
-    individual = xmin ; 
-    [foil, nurbs] = pts2ind(individual,numEvalPts);
-    % Visualize
-    figure(1);
-    plot(nacafoil(1,:),nacafoil(2,:), 'LineWidth', 3);
-    hold on;
-    plot(foil(1,:),foil(2,:), 'r', 'LineWidth', 3);
-    %plot(nurbs.coefs(1,1:end/2),nurbs.coefs(2,1:end/2),'rx', 'LineWidth', 3);
-    plot(nurbs.coefs(1,:),nurbs.coefs(2,:),'ko', 'LineWidth', 3);
-    axis equal;
-    axis([0 1 -0.7 0.7]);
-    %     legend('NACA 0012 target', 'Approximated Shape');
-    ax = gca;
-    ax.FontSize = 24;
-    drawnow;
-    hold off;
 end
-output.fitMax   = max_fitness;
+output.fitMax   = min_fitness;
 output.fitMed   = median_fitness;
-% figure(2); clf; hold on;
-% plot([output.fitMax; output.fitMed]','LineWidth',3);
-% legend('Min Fitness','Median Fitness','Location','NorthWest');
-% xlabel('Generations'); ylabel('Mean square error'); set(gca,'FontSize',16);
-% title('Performance of Shape formation')
+output.best_individual = xmin;
 end

@@ -1,19 +1,26 @@
 % Homework 3: SHAPE MATCHING PROBLEM
 clear;clc;
-output = shape_cmaes(800);
+output = shape_CMA_EP_ES(1666, 3, 100);
+solution = output.best_individual;
+fitness_values = output.fitMax m 1;
+figure(2); clf; hold on;
+disp("BEst fitness");
+disp(output.fitMax(end));
+disp(solution);
+
+eval = 6:6:9996;
+plot(eval, fitness_values);
+set(gca,'YScale','log')
+legend('Min Fitness','Location','NorthWest');
+xlabel('Function evaluations'); ylabel('Fitness value');
+set(gca,'FontSize',16);
+title('Performance')
+
 
 %% Run experiment once
 % Homework 3: SHAPE MATCHING PROBLEM
-clear;clc;
-output = shape_cmaes_noep(1000);
-
-
-%% Plotting fitness
-% figure(2); clf; hold on;
-% plot([output.fitMax; output.fitMed]','LineWidth',3);
-% legend('Min Fitness','Median Fitness','Location','NorthWest');
-% xlabel('Generations'); ylabel('Mean square error'); set(gca,'FontSize',16);
-% title('Performance of Shape formation')
+% clear;clc;
+% output = shape_cmaes_noep(1000);
 
 %% Calculating the best individual
 % [lowest, ilowest] = min(output.fitMax);

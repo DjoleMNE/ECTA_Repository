@@ -3,7 +3,7 @@
 clc;
 clear;
 p.bothPoles          = true;
-p.recurrent_nn       = true;
+p.recurrent_nn       = false;
 p.bias_included      = false;
 p.velocity_inclued   = false;
 p.visualize          = false;
@@ -13,7 +13,7 @@ p.mutProb            = 0.4;
 p.output_size        = 1;
 p.num_trials         = 10;
 p.subPop_size        = 40;
-p.num_generations    = 500;
+p.num_generations    = 700;
 p.goal_fitness       = 1000;
 if p.use_burst_mutation
     p.static_limit   = 20;
