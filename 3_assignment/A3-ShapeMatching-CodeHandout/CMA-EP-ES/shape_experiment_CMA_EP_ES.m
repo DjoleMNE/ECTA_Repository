@@ -1,13 +1,45 @@
 % Homework 3: SHAPE MATCHING PROBLEM
 clear;clc;
-output = shape_cmaes(800);
+output = shape_CMA_EP_ES(800);
 
 %% Run experiment once
 % Homework 3: SHAPE MATCHING PROBLEM
 clear;clc;
 output = shape_cmaes_noep(1000);
 
+%% Plotting 
+fitness = [];
+parfor iExp = 1:20
+   fitness(iExp,:) = shape_CMA_EP_ES();
+end
+CMAES_fitness = fitness;
 
+%% Plot CMAES no ep
+parfor iExp = 1: 20
+   fitness(iExp,:) = shape_cmaes_noep();
+end
+CMAES_fitness_noep = fitness;
+%% Save mat files
+save(['CMAES_medianfit_noep'],'CMAES_fitness_noep')
+%save(['CMAES_medianfit'], 'CMAES_fitness')
+
+a= load('CMAES_medianfit_noep.mat')
+disp(a);
+
+b = load('CMAES_medianfit.mat')
+disp(b);
+% figure(2);
+% CMA_ES_median_fit = CMAES_fitness;
+xScale = 4:4:10000;
+plot((median([CMAES_fitness_noep])),'LineWidth',2)
+hold on;
+
+
+
+legend('CMAESMedianFit','Location','NorthEast');
+xlabel('Generations'); ylabel('Fitness'); 
+set(gca,'FontSize',11,'YScale','log');
+title('Performance of CMAESMedianFit 20 trials')
 %% Plotting fitness
 % figure(2); clf; hold on;
 % plot([output.fitMax; output.fitMed]','LineWidth',3);

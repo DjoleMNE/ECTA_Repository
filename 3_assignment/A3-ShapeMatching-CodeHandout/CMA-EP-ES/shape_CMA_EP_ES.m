@@ -1,15 +1,17 @@
 %  strfitnessfct = 'frosenbrock';  % name of objective/fitness function
-function output = shape_cmaes(MaxGen)
+function fitness_val = shape_CMA_EP_ES()
   nGenes = 32;               % number of objective variables/problem dimension
   xmean = rand(nGenes,1);    % objective variables initial point
   sigma = 0.3;          % coordinate wise standard deviation (step size)
-  stopfitness = 1e-10;  % stop if fitness < stopfitness (minimization)
-  stopeval = 1e3*nGenes^2;   % stop after stopeval number of function evaluations
+  %stopfitness = 1e-10;  % stop if fitness < stopfitness (minimization)
+  %stopeval = 1e3*nGenes^2;   % stop after stopeval number of function evaluations
+  stopeval = 5000;
   numEvalPts = 256;                           % Num evaluation points
   nacaNum = [5,5,2,2];                        % NACA Parameters
   nacafoil= create_naca(nacaNum,numEvalPts); % Create foil
   % Strategy parameter setting: Selection  
-  lambda = 4+floor(3*log(nGenes));  % population size, offspring number
+ % lambda = 4+floor(3*log(nGenes));  % population size, offspring number
+  lambda = 4;
   mu = lambda/2;               % number of parents/points for recombination
   weights = log(mu+1/2)-log(1:mu)'; % muXone array for weighted recombination
   mu = floor(mu);        
@@ -37,11 +39,8 @@ function output = shape_cmaes(MaxGen)
                                       %   ||N(0,I)|| == norm(randn(N,1)) 
   % -------------------- Generation Loop --------------------------------
   counteval = 0;  
-  num_gen = MaxGen;
-  max_fitness = zeros(MaxGen,1);
-  median_fitness = zeros(MaxGen,1);
-
-for gen = 1:num_gen
+  iFit = 1;
+while counteval < stopeval
       % Generate and evaluate lambda offspring
       for k=1:lambda,
           x(:,k) = xmean + sigma * B * (D .* randn(nGenes,1)); % m + sig * Normal(0,C) 
@@ -51,8 +50,8 @@ for gen = 1:num_gen
     
       % Sort by fitness and compute weighted mean into xmean
       [fitness, index] = sort(fitness,'descend'); % minimization
-      max_fitness(gen,1) = max(fitness);
-      median_fitness(gen,1) = median(fitness);
+%      max_fitness(gen,1) = max(fitness);
+ %     median_fitness(gen,1) = median(fitness);
       xold = xmean;
       xmean = x(:,index(1:mu))* weights;   % recombination, new mean value
     
@@ -80,10 +79,20 @@ for gen = 1:num_gen
       D = sqrt(diag(D));        % D is a vector of standard deviations now
       invsqrtC = B * diag(D.^-1) * B';
     end
-    if fitness(1) <= stopfitness || max(D) > 1e7 * min(D)
-       break;
-    end
-    xmin = x(:, index(1));
+      fitness_val(iFit) = fitness(1);          
+     
+    
+      % Break, if fitness is good enough or condition exceeds 1e14, better termination methods are advisable 
+%       if arfitness(1) <= stopfitness || max(D) > 1e7 * min(D)
+%           break;
+   iFit = iFit +1;
+
+  counteval = counteval+1;
+        
+ % disp([num2str(counteval) ':'  num2str(fitness(1))]);
+end
+    
+     xmin = x(:, index(1));
     individual = xmin ; 
     [foil, nurbs] = pts2ind(individual,numEvalPts);
     % Visualize
@@ -101,11 +110,9 @@ for gen = 1:num_gen
     drawnow;
     hold off;
 end
-output.fitMax   = max_fitness;
-output.fitMed   = median_fitness;
+
 % figure(2); clf; hold on;
 % plot([output.fitMax; output.fitMed]','LineWidth',3);
 % legend('Min Fitness','Median Fitness','Location','NorthWest');
 % xlabel('Generations'); ylabel('Mean square error'); set(gca,'FontSize',16);
 % title('Performance of Shape formation')
-end

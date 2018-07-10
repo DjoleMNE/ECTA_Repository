@@ -7,5 +7,5 @@ half = round(nacafoil/2);
 % Total fitness (mean squared error)
 current_fitness = mean([errorTop.^2; errorBottom.^2]);
 error = current_fitness;
-fitness = 1.0 / current_fitness ;
+fitness = 1.0 / (current_fitness +0.01);
 end
