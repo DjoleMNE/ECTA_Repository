@@ -25,7 +25,7 @@ nodeAct(1:p.input_size) = input_vector;
 
 %Store past activations of hidden neurons as well
 nodeAct(p.input_size + 1 : end) = past_act(p.input_size + 1 : end);
-nodeAct = tansig(nodeAct * wMat);
+nodeAct = tanh(nodeAct * wMat);
 
 % Samples X Num_Output_Nodes 
 output = nodeAct( (end - p.output_size + 1) : end);

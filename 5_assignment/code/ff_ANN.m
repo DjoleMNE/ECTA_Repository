@@ -30,7 +30,7 @@ nodeAct = zeros(nSample, nNode);
 nodeAct(:, 1:num_input) = input_vector;
 
 for iNode = (num_input + 1): nNode
-   nodeAct(:, iNode) = tansig(nodeAct * wMat(:, iNode)); 
+   nodeAct(:, iNode) = tanh(nodeAct * wMat(:, iNode)); 
 end
 
 % Samples X Num_Output_Nodes 

@@ -33,6 +33,8 @@ static_generations = 0;
 overall_best_fitness = 0;
 best_individuals = randi(p.subPop_size, [1, hidden_length]);
 final_step = 0;
+best_nodes = hidden_node;
+
 %% Perform evolution
 for step = 1:p.num_generations
     final_step = step; 
@@ -74,6 +76,7 @@ for step = 1:p.num_generations
         if fitness > best_fitness
             best_matrix  = weight_matrix;
             best_fitness = fitness;
+            best_nodes = hidden_node;
             disp("Best fitness so far: " + best_fitness);
             best_individuals = chosen_individuals;
         end
@@ -94,7 +97,7 @@ for step = 1:p.num_generations
     end        
     if static_generations > p.static_limit
         disp("Stagnation reached. Current generation: " + step)
-        hidden_node = esp_burst_mutate(hidden_node, best_individuals, p);
+        hidden_node = esp_burst_mutate(best_nodes, best_individuals, p);
         static_generations = 0;
     end
         

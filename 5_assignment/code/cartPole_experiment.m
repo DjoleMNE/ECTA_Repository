@@ -5,7 +5,7 @@ clear;
 p.bothPoles          = true;
 p.recurrent_nn       = true;
 p.bias_included      = false;
-p.velocity_inclued   = true;
+p.velocity_inclued   = false;
 p.visualize          = false;
 p.use_burst_mutation = true;
 p.num_hidden         = 5;
