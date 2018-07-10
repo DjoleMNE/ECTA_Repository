@@ -18,6 +18,7 @@ initialState = [0 0 .017 0 0.0 0]';  % initial state (note, it is a column vecto
 scaling = [ 2.4 10.0 0.628329 5 0.628329 16]'; % Divide state vector by this to scale state to numbers between 1 and 0
 state = initialState;
 fitness  = 1000;
+past_state = zeros(1, p.net_size);
 
 for step = 1:totalSteps
     % Check that all states are legal
@@ -55,10 +56,12 @@ for step = 1:totalSteps
             current_state = [current_state 1];
         end
         if p.recurrent_nn
-            output = R_ANN(current_state, weight_matrix, p);
+            [output, activation] = R_ANN(current_state, past_state, weight_matrix, p);
+            past_state  = activation;
         else
             output = ff_ANN(current_state, weight_matrix, p);
         end
+        
 %         if p.visualize
 %             disp(output)
 %         end

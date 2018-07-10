@@ -108,8 +108,12 @@ nodeAct(1:nInputs) = inputVector;
 % Each time you multiply the activations by the wMat the activations travel
 % across one weight. It is typical to then assign the 'input' nodes the new
 % input from the environment.
+%First pass. Save activations of hidden nodes and continue
 nodeAct = tanh(nodeAct*wMat); 
 
+% then assign the 'input' nodes the new
+% input from the environment. activations of hidden nodes are saved from
+% previous pass
 nodeAct(1:nInputs) = inputVector;
 nodeAct = tanh(nodeAct*wMat);
 

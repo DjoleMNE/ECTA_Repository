@@ -1,36 +1,12 @@
 %% Enforced Sub-Populations Method
-function best_matrix = esp(p)
-% clc;
-% clear;
-% p.bothPoles         = true;
-% p.bias_included     = false;
-% p.velocity_inclued  = true;
-% p.visualize         = false;
-% p.num_hidden        = 5;
-% p.mutProb           = 0.4;
-% p.output_size       = 1;
-% p.num_trials        = 10;
-% p.static_limit      = 20;
-% p.subPop_size       = 20;
-% p.total_individuals = p.num_hidden * p.subPop_size;
-% p.num_generations   = 500;
-% p.goal_fitness      = 1000;
-% 
-% if p.bothPoles
-%     p.input_size = 6;
-% else
-%     p.input_size = 4;
-% end
-% 
-% if ~p.velocity_inclued
-%     p.input_size = p.input_size/2;
-% end
-% 
-% if p.bias_included
-%     p.input_size = p.input_size + 1;
-% end
-% p.chromo_size   = p.input_size + p.output_size;
-% p.net_size      = p.input_size + p.num_hidden + p.output_size;
+function [best_matrix, solution_found] = esp(p)
+%% Setting parameters
+solution_found = true;
+if p.recurrent_nn
+    hidden_length = p.num_hidden + p.output_size;
+else
+    hidden_length = p.num_hidden;
+end
 
 %% Initialize data struct
 hidden_node = struct('individual', ...
@@ -39,23 +15,27 @@ hidden_node = struct('individual', ...
                                              p.subPop_size, 1),...
                                      'participation_count', 0, ...
                                      'cum_fitness', 0)},...
-                              p.num_hidden, 1));
+                              hidden_length, 1));
 
 %% Initialize weights/subpopulations
-for node = 1:p.num_hidden
+for node = 1:hidden_length
     for index = 1:p.subPop_size        
         hidden_node(node).individual(index).chromosome = rand(1 , p.chromo_size);       
     end
 end
 weight_matrix = zeros(p.net_size);
+for index = 1:p.input_size
+    weight_matrix(index, index) = 1;
+end
 best_matrix   = weight_matrix;
 best_fitness  = 0;
 static_generations = 0;
 overall_best_fitness = 0;
-best_individuals = randi(p.subPop_size, [1, p.num_hidden]);
-
+best_individuals = randi(p.subPop_size, [1, hidden_length]);
+final_step = 0;
 %% Perform evolution
 for step = 1:p.num_generations
+    final_step = step; 
     % Stop training if the problem is solved
     if best_fitness >= p.goal_fitness
         disp("Goal Reached - Stopping Training");
@@ -67,17 +47,26 @@ for step = 1:p.num_generations
     % Evaluate different NNs until average limit is reached
     for iteration = 1:p.subPop_size * p.num_trials
         %Generate random index of an individual and save it in vector
-        chosen_individuals = randi(p.subPop_size, [1, p.num_hidden]);
+        chosen_individuals = randi(p.subPop_size, [1, hidden_length]);
 
         % Form a random NN
-        for node = 1:p.num_hidden        
-            weight_matrix(1:p.input_size, p.input_size + node)=...
-                          hidden_node(node).individual(chosen_individuals(node)).chromosome(1:p.input_size);      
-            weight_matrix(p.input_size + node,...
-                          p.input_size + p.num_hidden + 1 : end)=...
-                          hidden_node(node).individual(chosen_individuals(node)).chromosome(p.input_size + 1:end);
-            hidden_node(node).individual(chosen_individuals(node)).participation_count =...
-               hidden_node(node).individual(chosen_individuals(node)).participation_count +1;        
+        if p.recurrent_nn
+            for node = 1:hidden_length      
+                weight_matrix(:, p.input_size + node)=...
+                   hidden_node(node).individual(chosen_individuals(node)).chromosome(((node - 1) * p.net_size) + 1 : node * p.net_size);                                
+                hidden_node(node).individual(chosen_individuals(node)).participation_count =...
+                   hidden_node(node).individual(chosen_individuals(node)).participation_count +1;        
+            end
+        else
+            for node = 1:hidden_length      
+                weight_matrix(1:p.input_size, p.input_size + node)=...
+                      hidden_node(node).individual(chosen_individuals(node)).chromosome(1:p.input_size);      
+                weight_matrix(p.input_size + node,...
+                      p.input_size + hidden_length + 1 : end)=...
+                      hidden_node(node).individual(chosen_individuals(node)).chromosome(p.input_size + 1:end);
+                hidden_node(node).individual(chosen_individuals(node)).participation_count =...
+                   hidden_node(node).individual(chosen_individuals(node)).participation_count +1;        
+            end
         end
 
         % Perform the simulation and evaluate the chosen NN
@@ -90,7 +79,7 @@ for step = 1:p.num_generations
         end
         
         % Accumulate fitness for each indidual chosen for the current NN
-        for node = 1:p.num_hidden
+        for node = 1:hidden_length
             hidden_node(node).individual(chosen_individuals(node)).cum_fitness =...
                hidden_node(node).individual(chosen_individuals(node)).cum_fitness + fitness;  
         end
@@ -110,7 +99,7 @@ for step = 1:p.num_generations
     end
         
     %% Recombination
-    for node = 1:p.num_hidden 
+    for node = 1:hidden_length
         %Find top quartile of population
         score_vector =  zeros(1, p.subPop_size);
         for individual = 1: p.subPop_size
@@ -158,4 +147,9 @@ for step = 1:p.num_generations
             hidden_node(node).individual(sortend_indices(index_2)).cum_fitness = 0;
         end
     end
+end
+
+if final_step == p.num_generations
+    disp("Generation limit reached")
+    solution_found = false;
 end
