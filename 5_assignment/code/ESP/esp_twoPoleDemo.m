@@ -50,6 +50,10 @@ for step = 1:totalSteps
             else
                 current_state = scaledInput([1 3])';
             end
+        else
+            if ~p.bothPoles
+                current_state = scaledInput(1:4)';
+            end
         end
         
         if p.bias_included

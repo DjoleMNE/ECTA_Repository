@@ -55,7 +55,7 @@ for step = 1:p.num_generations
         if p.recurrent_nn
             for node = 1:hidden_length      
                 weight_matrix(:, p.input_size + node)=...
-                   hidden_node(node).individual(chosen_individuals(node)).chromosome(((node - 1) * p.net_size) + 1 : node * p.net_size);                                
+                   hidden_node(node).individual(chosen_individuals(node)).chromosome;                                
                 hidden_node(node).individual(chosen_individuals(node)).participation_count =...
                    hidden_node(node).individual(chosen_individuals(node)).participation_count +1;        
             end

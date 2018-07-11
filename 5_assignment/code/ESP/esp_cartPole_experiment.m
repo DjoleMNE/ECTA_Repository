@@ -8,12 +8,12 @@ p.bias_included      = false;
 p.velocity_inclued   = false;
 p.visualize          = false;
 p.use_burst_mutation = true;
-p.num_hidden         = 5;
+p.num_hidden         = 3;
 p.mutProb            = 0.4;
 p.output_size        = 1;
 p.num_trials         = 10;
 p.subPop_size        = 40;
-p.num_generations    = 700;
+p.num_generations    = 800;
 p.goal_fitness       = 1000;
 if p.use_burst_mutation
     p.static_limit   = 20;
@@ -38,7 +38,7 @@ end
 p.net_size          = p.input_size + p.num_hidden + p.output_size;
 
 if p.recurrent_nn
-    p.chromo_size   = p.net_size * (p.num_hidden + p.output_size);    
+    p.chromo_size   = p.net_size;    
 else
     p.chromo_size   = p.input_size + p.output_size;
 end
@@ -62,6 +62,7 @@ if solution_found
     end
     disp("Final simulation started")
     % Perform the simulation and evaluate the choosen NN
+    clf;
     fitness = esp_twoPoleDemo(p, best_matrix);
-    disp(fitness)
+    disp("Final score: " + fitness);
 end
