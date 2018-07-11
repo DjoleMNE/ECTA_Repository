@@ -1,11 +1,5 @@
 %% Feed forward ANN with Hidden Nodes
 function output = cmaes_ff_ANN(input_vector, weight_matrix, p)
-% input_vector = [1 2.5 3; 4.7 6.7 8.0];
-% num_hidden   = 2;
-% num_output   = 2;
-% this is: [nSample X nInputs]
-%disp('Input Vector Size: '); disp(size(input_vector))
-
 %% FFNet with Hidden Nodes
 % weight matrix takes this form:  Connection From  \ Connection To
 % [nInputs X nOutputs]

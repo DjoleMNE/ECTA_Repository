@@ -18,7 +18,7 @@ initialState = [0 0 .017 0 0.0 0]';  % initial state (note, it is a column vecto
 scaling = [ 2.4 10.0 0.628329 5 0.628329 16]'; % Divide state vector by this to scale state to numbers between 1 and 0
 state = initialState;
 fitness  = 1000;
-% past_state = zeros(1, p.net_size);
+past_state = zeros(1, p.net_size);
 
 for step = 1:totalSteps
     % Check that all states are legal
@@ -55,9 +55,16 @@ for step = 1:totalSteps
                 current_state = scaledInput(1:4)';
             end
         end
-
-        output = cmaes_ff_ANN(current_state, weight_matrix, p);
-                
+   
+        if p.recurrent_nn
+            [output, activation] = cmaes_R_ANN(current_state, past_state, weight_matrix, p);
+            past_state  = activation;
+        else
+            output = cmaes_ff_ANN(current_state, weight_matrix, p);
+        end
+        if p.visualize
+            disp(output)
+        end
         % Prune the output. Never happed to be bigger then 1.0, but for
         % every case to be pruned
         if output > 1.0
@@ -79,7 +86,7 @@ for step = 1:totalSteps
             if p.bothPoles
                 cpvisual(fig, 0.5, state([1 2 5 6]), [-3 3 0 2], action );% Pole 2
             end
-%             pause(0.000001);
+%             pause(0.00001);
         end
     end
 end

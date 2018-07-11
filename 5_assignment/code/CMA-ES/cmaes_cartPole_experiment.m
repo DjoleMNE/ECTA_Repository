@@ -3,7 +3,7 @@
 clc;
 clear;
 p.bothPoles          = true;
-p.recurrent_nn       = false;
+p.recurrent_nn       = true;
 p.velocity_inclued   = false;
 p.visualize          = false;
 p.num_hidden         = 3;
@@ -25,7 +25,7 @@ p.net_size          = p.input_size + p.num_hidden + p.output_size;
 p.num_open          = p.input_size + p.output_size;
 
 if p.recurrent_nn
-    p.chromo_size   = p.net_size * p.num_open;    
+    p.chromo_size   = p.net_size * (p.num_hidden + p.output_size);    
 else
     p.chromo_size   = p.num_hidden * p.num_open;
 end

@@ -1,5 +1,5 @@
 %% Recurrent ANN with Hidden Nodes
-function [output, nodeAct] = esp_R_ANN(input_vector, past_act, weight_matrix, p)
+function [output, nodeAct] = cmaes_R_ANN(input_vector, past_act, weight_matrix, p)
 %% Initialization
 % weight matrix takes this form:  Connection From  \ Connection To
 % [nInputs X nOutputs]
