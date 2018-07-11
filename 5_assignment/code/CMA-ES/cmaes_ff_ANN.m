@@ -1,5 +1,5 @@
 %% Feed forward ANN with Hidden Nodes
-function output = ff_ANN(input_vector, weight_matrix, p)
+function output = cmaes_ff_ANN(input_vector, weight_matrix, p)
 % input_vector = [1 2.5 3; 4.7 6.7 8.0];
 % num_hidden   = 2;
 % num_output   = 2;
