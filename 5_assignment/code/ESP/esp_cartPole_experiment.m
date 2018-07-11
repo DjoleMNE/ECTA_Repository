@@ -3,7 +3,7 @@
 clc;
 clear;
 p.bothPoles          = true;
-p.recurrent_nn       = false;
+p.recurrent_nn       = true;
 p.bias_included      = false;
 p.velocity_inclued   = false;
 p.visualize          = false;
@@ -62,6 +62,6 @@ if solution_found
     end
     disp("Final simulation started")
     % Perform the simulation and evaluate the choosen NN
-    fitness = twoPoleDemo(p, best_matrix);
+    fitness = esp_twoPoleDemo(p, best_matrix);
     disp(fitness)
 end

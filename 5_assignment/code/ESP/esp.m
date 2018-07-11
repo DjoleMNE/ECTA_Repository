@@ -72,7 +72,7 @@ for step = 1:p.num_generations
         end
 
         % Perform the simulation and evaluate the chosen NN
-        fitness = twoPoleDemo(p, weight_matrix);
+        fitness = esp_twoPoleDemo(p, weight_matrix);
         if fitness > best_fitness
             best_matrix  = weight_matrix;
             best_fitness = fitness;

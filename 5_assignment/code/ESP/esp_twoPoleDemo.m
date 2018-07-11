@@ -1,5 +1,5 @@
 %% This is the physics simulator and FF_ANN tester
-function fitness = twoPoleDemo(p, weight_matrix)
+function fitness = esp_twoPoleDemo(p, weight_matrix)
 
 % Here is how a state is defined:
 %   state = [ x           <- the cart position
@@ -56,10 +56,10 @@ for step = 1:totalSteps
             current_state = [current_state 1];
         end
         if p.recurrent_nn
-            [output, activation] = R_ANN(current_state, past_state, weight_matrix, p);
+            [output, activation] = esp_R_ANN(current_state, past_state, weight_matrix, p);
             past_state  = activation;
         else
-            output = ff_ANN(current_state, weight_matrix, p);
+            output = esp_ff_ANN(current_state, weight_matrix, p);
         end
         
 %         if p.visualize
